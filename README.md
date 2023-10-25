@@ -5,6 +5,7 @@ O projeto tem como objetivo criar uma plataforma web intuitiva e envolvente que 
 ## Endereço de Deploy - GitHub Pages
 
 ## Protótipo
+https://www.figma.com/file/aGjosAFWlm40GUgbWsjoLH/mockup-adventure-web?type=design&node-id=0%3A1&mode=design&t=fj8Blo1kaQQwVYYe-1
 
 ## Checklist
 - [ ] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
