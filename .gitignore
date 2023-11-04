@@ -26,5 +26,4 @@ docs/
 # Compiled output
 /node_modules
 
-.vscode
 .angular
