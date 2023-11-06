@@ -10,9 +10,9 @@
       </div>
       <div class="row center">
         <a
-          [routerLink]="['/destinations']"
-          id="download-button"
+          id="destinos"
           class="btn-large waves-effect waves-light teal lighten-1"
+          (click)="navigateToDestinationPage()"
           >Descobrir novos lugares</a
         >
       </div>
@@ -92,7 +92,7 @@
   </div>
   <div class="parallax">
     <img
-      src="../assets/img/background2.png"
+      src="../../../../assets/img/background2.png"
       alt="Unsplashed background img 2"
     />
   </div>
@@ -133,7 +133,7 @@
   </div>
   <div class="parallax">
     <img
-      src="../assets/img/background3.png"
+      src="../../../../assets/img/background3.png"
       alt="Unsplashed background img 3"
     />
   </div>

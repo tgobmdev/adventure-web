@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { LayoutContentComponent } from './components/layout-content/layout-content.component';
-import { LayoutFooterComponent } from './components/layout-footer/layout-footer.component';
-import { LayoutNavComponent } from './components/layout-nav/layout-nav.component';
-import { LayoutRoutingModule } from './layout-routing.module';
+import { LayoutContentComponent } from './content/layout-content.component';
+import { LayoutFooterComponent } from './footer/layout-footer.component';
 import { LayoutComponent } from './layout.component';
+import { LayoutNavComponent } from './nav/layout-nav.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +12,7 @@ import { LayoutComponent } from './layout.component';
     LayoutFooterComponent,
     LayoutComponent,
   ],
-  imports: [CommonModule, LayoutRoutingModule],
+  imports: [CommonModule],
   exports: [LayoutComponent],
 })
 export class LayoutModule {}
