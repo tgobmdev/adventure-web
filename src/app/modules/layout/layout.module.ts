@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { LayoutContentComponent } from './components/layout-content/layout-content.component';
 import { LayoutFooterComponent } from './components/layout-footer/layout-footer.component';
 import { LayoutNavComponent } from './components/layout-nav/layout-nav.component';
+import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
@@ -12,7 +13,7 @@ import { LayoutComponent } from './layout.component';
     LayoutFooterComponent,
     LayoutComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, LayoutRoutingModule],
   exports: [LayoutComponent],
 })
 export class LayoutModule {}
