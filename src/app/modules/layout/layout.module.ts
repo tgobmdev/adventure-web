@@ -7,10 +7,10 @@ import { LayoutNavComponent } from './nav/layout-nav.component';
 
 @NgModule({
   declarations: [
+    LayoutComponent,
     LayoutNavComponent,
     LayoutContentComponent,
     LayoutFooterComponent,
-    LayoutComponent,
   ],
   imports: [CommonModule],
   exports: [LayoutComponent],
