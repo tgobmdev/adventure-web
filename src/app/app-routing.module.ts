@@ -1,11 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './modules/pages/home-page/home-page.component';
-
-const HOME_PAGE = {
-  path: 'home',
-  component: HomePageComponent,
-};
 
 const DESTINATIONS = {
   path: 'destinations',
@@ -15,7 +9,7 @@ const DESTINATIONS = {
     ),
 };
 
-const routes: Routes = [HOME_PAGE, DESTINATIONS];
+const routes: Routes = [DESTINATIONS];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
