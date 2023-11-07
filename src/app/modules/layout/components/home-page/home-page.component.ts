@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class HomePageComponent {
   constructor(private readonly router: Router) {}
 
-  navigateToDestinationPage = () => {
+  navToDestinationPage = () => {
     this.router.navigate(['destinations']);
   };
 }
