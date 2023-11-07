@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { LayoutContentComponent } from './content/layout-content.component';
 import { LayoutFooterComponent } from './footer/layout-footer.component';
-import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { LayoutNavComponent } from './nav/layout-nav.component';
 
@@ -13,7 +12,7 @@ import { LayoutNavComponent } from './nav/layout-nav.component';
     LayoutContentComponent,
     LayoutFooterComponent,
   ],
-  imports: [CommonModule, LayoutRoutingModule],
+  imports: [CommonModule],
   exports: [LayoutComponent],
 })
 export class LayoutModule {}
