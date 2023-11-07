@@ -1,11 +1,33 @@
 <div class="container">
-  <p>login works!</p>
-  <p-card header="Title">
-    <p class="m-0">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-      consequuntur error repudiandae numquam deserunt quisquam repellat libero
-      asperiores earum nam nobis, culpa ratione quam perferendis esse,
-      cupiditate neque quas!
-    </p>
+  <p-card [formGroup]="formLogin">
+    <div class="field grid">
+      <label for="username" class="col-fixed" style="width: 100px"
+        >Username</label
+      >
+      <div class="col">
+        <input
+          id="username"
+          type="text"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+          formControlName="username"
+        />
+      </div>
+    </div>
+    <div class="field grid">
+      <label for="password" class="col-fixed" style="width: 100px"
+        >Password</label
+      >
+      <div class="col">
+        <p-password
+          id="password"
+          formControlName="password"
+          [feedback]="false"
+          [toggleMask]="true"
+        ></p-password>
+      </div>
+    </div>
+    <div class="field grid" style="margin-top: 30px">
+      <p-button label="Entrar"></p-button>
+    </div>
   </p-card>
 </div>
