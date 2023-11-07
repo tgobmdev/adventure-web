@@ -1,0 +1,14 @@
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.layout-content {
+  min-height: 74.97vh;
+  height: 100%;
+}

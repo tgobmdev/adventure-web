@@ -10,17 +10,17 @@
       </div>
       <div class="row center">
         <a
-          href="http://materializecss.com/getting-started.html"
-          id="download-button"
+          id="destinos"
           class="btn-large waves-effect waves-light teal lighten-1"
-          >Get Started</a
+          (click)="navToDestinationPage()"
+          >Descobrir novos lugares</a
         >
       </div>
       <br /><br />
     </div>
   </div>
   <div>
-    <video [autoplay]="true" loop class="video">
+    <video autoplay loop class="video">
       <source src="../assets/videos/mp4/maragogi.mp4" type="video/mp4" />
     </video>
   </div>
@@ -31,22 +31,6 @@
     <!--   Icon Section   -->
     <div class="row">
       <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="images/sample-1.jpg" />
-            <span class="card-title">Card Title</span>
-          </div>
-          <div class="card-content">
-            <p>
-              I am a very simple card. I am good at containing small bits of
-              information. I am convenient because I require little markup to
-              use effectively.
-            </p>
-          </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-          </div>
-        </div>
         <div class="icon-block">
           <h2 class="center brown-text">
             <i class="material-icons">flash_on</i>
@@ -102,13 +86,13 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light contorno-branco">Maragogi, Alagoas</h5>
+        <h5 class="header col s12 light">Maragogi, Alagoas</h5>
       </div>
     </div>
   </div>
   <div class="parallax">
     <img
-      src="../assets/img/background2.png"
+      src="../../../../assets/img/background2.png"
       alt="Unsplashed background img 2"
     />
   </div>
@@ -141,15 +125,13 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light contorno-branco">
-          Gramado, Rio Grande do Sul
-        </h5>
+        <h5 class="header col s12 light">Gramado, Rio Grande do Sul</h5>
       </div>
     </div>
   </div>
   <div class="parallax">
     <img
-      src="../assets/img/background3.png"
+      src="../../../../assets/img/background3.png"
       alt="Unsplashed background img 3"
     />
   </div>
