@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { SharedModule } from '../../../shared/shared.module';
 import { AccountRoutingModule } from './account-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -19,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
     PasswordModule,
     ButtonModule,
     ReactiveFormsModule,
+    SharedModule,
     AccountRoutingModule,
   ],
 })
