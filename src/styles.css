@@ -2,7 +2,6 @@
 @import '../src/assets/css/style.css';
 @import '../src/assets/fonts/fonts.css';
 @import '../node_modules/primeicons/primeicons.css';
-@import '../node_modules/primeflex/primeflex.css';
 
 .p-password {
   position: relative;
