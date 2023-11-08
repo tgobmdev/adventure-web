@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { CardModule } from 'primeng/card';
 import { DestinationRoutingModule } from './destination-routing.module';
+import { DestinationComponent } from './destination.component';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, DestinationRoutingModule],
+  declarations: [DestinationComponent],
+  imports: [CommonModule, DestinationRoutingModule, CardModule],
 })
 export class DestinationModule {}
