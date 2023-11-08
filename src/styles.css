@@ -1,0 +1,10 @@
+@import 'src/assets/css/materialize.min.css';
+@import 'src/assets/css/style.css';
+@import 'src/assets/fonts/fonts.css';
+@import 'primeicons/primeicons.css';
+
+.p-password {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+}
