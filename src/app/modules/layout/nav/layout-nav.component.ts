@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 export class LayoutNavComponent {
   constructor(private readonly router: Router) {}
 
+  navToWelcomePage = () => {
+    this.router.navigate(['/welcome']);
+  };
+
   navToLoginPage = () => {
     this.router.navigate(['/account/login']);
   };

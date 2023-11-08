@@ -7,3 +7,59 @@
   left: 0;
   z-index: -1;
 }
+
+.img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.icon-over {
+  object-fit: cover;
+  height: 420px;
+  width: 368px;
+  transition: all 0.3s ease-in-out;
+  filter: brightness(0.7);
+}
+
+.icon-over:hover {
+  transform: scale(1.05);
+}
+
+ul {
+  list-style: none; /* Remove os marcadores da lista */
+}
+
+li {
+  position: relative; /* Ative o posicionamento relativo */
+  margin-bottom: 10px; /* Adicione margem entre os itens da lista */
+}
+
+.img-text {
+  position: absolute; /* Ative o posicionamento absoluto para posicionar o texto dentro da imagem */
+  left: 0; /* Alinhe o texto com a esquerda da imagem */
+  right: 0; /* Alinhe o texto com a direita da imagem */
+  bottom: 0; /* Alinhe o texto com a parte inferior da imagem */
+  color: #fff; /* Defina a cor do texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif, Arial, sans-serif;
+}
+
+.bottom-align {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  position: relative; /* Ative o posicionamento relativo para criar um contexto de posicionamento */
+  display: flex; /* Use flexbox para alinhar verticalmente o conteúdo */
+  flex-direction: column; /* Alinhe o conteúdo verticalmente */
+  justify-content: center; /* Centralize verticalmente o conteúdo dentro da imagem */
+  align-items: center; /* Centralize horizontalmente o conteúdo dentro da imagem */
+}

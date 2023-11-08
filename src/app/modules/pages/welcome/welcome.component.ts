@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent {
+  email: string = 'generico@generico.com'
   constructor(private readonly router: Router) {}
 
   navToDestinationPage = () => {
