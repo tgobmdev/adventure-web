@@ -9,19 +9,27 @@ import { Router } from '@angular/router';
 export class LayoutNavComponent {
   constructor(private readonly router: Router) {}
 
-  navToWelcomePage = () => {
-    this.router.navigate(['welcome']);
+  redirectToPage = (route: string) => {
+    this.router.navigate([route]);
   };
 
-  navToLoginPage = () => {
-    this.router.navigate(['account/login']);
+  redirectToWelcomePage = () => {
+    this.redirectToPage('welcome');
   };
 
-  navToDestinationPage = () => {
-    this.router.navigate(['destinations']);
+  redirectToLoginPage = () => {
+    this.redirectToPage('account/login');
   };
 
-  navToTravelPage = () => {
-    this.router.navigate(['travels']);
+  redirectToDestinationPage = () => {
+    this.redirectToPage('destinations');
+  };
+
+  redirectToTravelPage = () => {
+    this.redirectToPage('travels');
+  };
+
+  redirectToRoadmapPage = () => {
+    this.redirectToPage('roadmaps');
   };
 }

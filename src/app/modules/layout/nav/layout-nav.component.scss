@@ -1,6 +1,11 @@
-.cursive {
-  font-family: 'Great Vibes Regular'; /* Use a fonte cursiva desejada */
+.fancy-heading {
+  font-family: 'Great Vibes Regular';
   color: #333;
   font-size: 4rem;
   padding-top: 6px;
+}
+
+.clickable-no-select {
+  cursor: pointer;
+  user-select: none;
 }

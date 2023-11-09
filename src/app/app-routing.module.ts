@@ -33,7 +33,15 @@ const TRAVELS = {
     ),
 };
 
-const routes: Routes = [WELCOME, ACCOUNT, DESTINATION, TRAVELS];
+const ROADMAPS = {
+  path: 'roadmaps',
+  loadChildren: () =>
+    import('../app/modules/pages/roadmap/roadmap.module').then(
+      (m) => m.RoadmapModule,
+    ),
+};
+
+const routes: Routes = [WELCOME, ACCOUNT, DESTINATION, TRAVELS, ROADMAPS];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
