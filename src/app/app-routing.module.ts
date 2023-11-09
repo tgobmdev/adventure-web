@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WelcomeComponent } from './modules/pages/welcome/welcome.component';
 
 const WELCOME = {
   path: 'welcome',
-  component: WelcomeComponent,
+  loadChildren: () =>
+    import('../app/modules/pages/welcome/welcome.module').then(
+      (m) => m.WelcomeModule,
+    ),
 };
 
 const ACCOUNT = {
