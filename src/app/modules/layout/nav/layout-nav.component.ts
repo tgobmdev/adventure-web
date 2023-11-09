@@ -10,10 +10,18 @@ export class LayoutNavComponent {
   constructor(private readonly router: Router) {}
 
   navToWelcomePage = () => {
-    this.router.navigate(['/welcome']);
+    this.router.navigate(['welcome']);
   };
 
   navToLoginPage = () => {
-    this.router.navigate(['/account/login']);
+    this.router.navigate(['account/login']);
+  };
+
+  navToDestinationPage = () => {
+    this.router.navigate(['destinations']);
+  };
+
+  navToTravelPage = () => {
+    this.router.navigate(['travels']);
   };
 }

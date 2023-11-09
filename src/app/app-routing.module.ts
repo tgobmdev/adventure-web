@@ -25,7 +25,15 @@ const DESTINATION = {
     ),
 };
 
-const routes: Routes = [WELCOME, ACCOUNT, DESTINATION];
+const TRAVELS = {
+  path: 'travels',
+  loadChildren: () =>
+    import('../app/modules/pages/travel/travel.module').then(
+      (m) => m.TravelModule,
+    ),
+};
+
+const routes: Routes = [WELCOME, ACCOUNT, DESTINATION, TRAVELS];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
