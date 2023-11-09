@@ -5,7 +5,6 @@
   object-fit: cover;
   top: 0;
   left: 0;
-  z-index: -1;
 }
 
 .img {
@@ -27,20 +26,20 @@
 }
 
 ul {
-  list-style: none; /* Remove os marcadores da lista */
+  list-style: none;
 }
 
 li {
-  position: relative; /* Ative o posicionamento relativo */
-  margin-bottom: 10px; /* Adicione margem entre os itens da lista */
+  position: relative;
+  margin-bottom: 10px;
 }
 
 .img-text {
-  position: absolute; /* Ative o posicionamento absoluto para posicionar o texto dentro da imagem */
-  left: 0; /* Alinhe o texto com a esquerda da imagem */
-  right: 0; /* Alinhe o texto com a direita da imagem */
-  bottom: 0; /* Alinhe o texto com a parte inferior da imagem */
-  color: #fff; /* Defina a cor do texto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,11 +56,11 @@ li {
 }
 
 .image-container {
-  position: relative; /* Ative o posicionamento relativo para criar um contexto de posicionamento */
-  display: flex; /* Use flexbox para alinhar verticalmente o conteúdo */
-  flex-direction: column; /* Alinhe o conteúdo verticalmente */
-  justify-content: center; /* Centralize verticalmente o conteúdo dentro da imagem */
-  align-items: center; /* Centralize horizontalmente o conteúdo dentro da imagem */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .shadow-box {
