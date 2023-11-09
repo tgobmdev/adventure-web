@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="header center white-text text-lighten-2">Maragogi, Alagoas</h1>
     <div class="row center">
-      <h5 class="header col s12 light">
+      <h5 class="header col s12 white-text">
         O paraíso tropical de águas cristalinas e praias deslumbrantes.
       </h5>
     </div>
@@ -23,7 +23,7 @@
   </video>
 </div>
 
-<div class="container shadow-box">
+<div class="container">
   <div
     class="section no-pad-bot"
     style="padding-top: 1rem; padding-bottom: 1rem"
@@ -86,49 +86,47 @@
 
 <div class="section no-pad-bot">
   <div class="container">
-    <div class="card">
-      <div class="row container center">
-        <h5
-          class="header col s12 light"
-          style="
-            color: black;
-            font-weight: bold;
-            font-family: 'Montserrat', sans-serif, Arial, sans-serif;
-          "
-        >
-          Turismo no Brasil
-        </h5>
-        <p style="text-align: justify">
-          O turismo desempenha um papel fundamental na economia de muitos países
-          ao redor do mundo, oferecendo a oportunidade de conhecer culturas
-          diversas, apreciar paisagens deslumbrantes e experimentar culinárias
-          locais. Seja você um amante de praias paradisíacas, montanhas
-          majestosas, cidades vibrantes ou destinos rurais, o turismo
-          proporciona uma ampla gama de opções para satisfazer os desejos de
-          todos os viajantes. Além disso, promove o intercâmbio cultural e o
-          entendimento mútuo entre pessoas de diferentes origens, tornando-se
-          uma força positiva na promoção da paz e harmonia global.
-        </p>
-        <p style="text-align: justify">
-          O setor de turismo é um dos mais importantes da economia, sendo
-          responsável por grande parte da geração de riqueza em países como
-          Itália, França e Espanha. Globalmente, a cadeia do turismo contribui
-          com 10,4% do Produto Interno Bruto (PIB). O Brasil possui um imenso
-          potencial no turismo, devido à variedade de paisagens naturais, como
-          praias, roteiros pela Mata Atlântica e Amazônia, bem como destinos
-          histórico-culturais. Apesar disso, o Brasil recebe apenas 0,5% de
-          todos os turistas do mundo, indicando um vasto espaço para o
-          crescimento do setor e oportunidades significativas para atuar,
-          envolvendo uma ampla gama de produtos e serviços, incluindo
-          transporte, hospedagem, alimentação, passeios e souvenirs.
-        </p>
-      </div>
+    <div class="row container center">
+      <h5
+        class="header col s12 light"
+        style="
+          color: black;
+          font-weight: bold;
+          font-family: 'Montserrat', sans-serif, Arial, sans-serif;
+        "
+      >
+        Turismo no Brasil
+      </h5>
+      <p style="text-align: justify">
+        O turismo desempenha um papel fundamental na economia de muitos países
+        ao redor do mundo, oferecendo a oportunidade de conhecer culturas
+        diversas, apreciar paisagens deslumbrantes e experimentar culinárias
+        locais. Seja você um amante de praias paradisíacas, montanhas
+        majestosas, cidades vibrantes ou destinos rurais, o turismo proporciona
+        uma ampla gama de opções para satisfazer os desejos de todos os
+        viajantes. Além disso, promove o intercâmbio cultural e o entendimento
+        mútuo entre pessoas de diferentes origens, tornando-se uma força
+        positiva na promoção da paz e harmonia global.
+      </p>
+      <p style="text-align: justify">
+        O setor de turismo é um dos mais importantes da economia, sendo
+        responsável por grande parte da geração de riqueza em países como
+        Itália, França e Espanha. Globalmente, a cadeia do turismo contribui com
+        10,4% do Produto Interno Bruto (PIB). O Brasil possui um imenso
+        potencial no turismo, devido à variedade de paisagens naturais, como
+        praias, roteiros pela Mata Atlântica e Amazônia, bem como destinos
+        histórico-culturais. Apesar disso, o Brasil recebe apenas 0,5% de todos
+        os turistas do mundo, indicando um vasto espaço para o crescimento do
+        setor e oportunidades significativas para atuar, envolvendo uma ampla
+        gama de produtos e serviços, incluindo transporte, hospedagem,
+        alimentação, passeios e souvenirs.
+      </p>
     </div>
   </div>
 </div>
 
 <div class="section no-pad-bot">
-  <div class="container">
+  <div class="container" style="margin-bottom: 30px">
     <div class="row center">
       <h5
         class="header col s12 light"
@@ -141,15 +139,14 @@
         Galerias
       </h5>
     </div>
-
-    <div class="row center">
+    <div class="container">
       <p-galleria
         [value]="data"
         [showItemNavigators]="true"
         [showThumbnails]="false"
         [showIndicators]="true"
         [showIndicatorsOnItem]="true"
-        [containerStyle]="{ 'max-width': '1920px' }"
+        [containerStyle]="{ 'max-width': '1024px' }"
       >
         <ng-template pTemplate="item" let-item>
           <img [src]="item.itemImageSrc" style="width: 100%; display: block" />
