@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { User } from '../../../../shared/models/User';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +10,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
-
-  constructor() {
+  user!: User;
+  constructor(private readonly messageService: MessageService) {
     this.createLoginForm();
   }
 
@@ -17,8 +19,16 @@ export class LoginComponent implements OnInit {
 
   createLoginForm = () => {
     this.formLogin = new FormGroup({
-      username: new FormControl(''),
-      password: new FormControl(''),
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    });
+  };
+
+  onLogin = async () => {
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: 'Logado com Sucesso!',
     });
   };
 }
