@@ -7,10 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
-  email: string = 'generico@generico.com';
-
-  responsiveOptions: any[] | undefined;
-
   data: any = [
     {
       itemImageSrc: 'assets/img/gallery/gruta-lago-azul-bonito-ms.jpg',

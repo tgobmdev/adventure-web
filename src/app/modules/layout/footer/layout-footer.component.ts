@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './layout-footer.component.html',
   styleUrls: ['./layout-footer.component.scss'],
 })
-export class LayoutFooterComponent {}
+export class LayoutFooterComponent {
+  email: string = 'generico@generico.com';
+}
