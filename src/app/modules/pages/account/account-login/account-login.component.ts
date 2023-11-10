@@ -4,11 +4,11 @@ import { MessageService } from 'primeng/api';
 import { User } from '../../../../shared/models/user';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-account-login',
+  templateUrl: './account-login.component.html',
+  styleUrls: ['./account-login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class AccountLoginComponent implements OnInit {
   formLogin!: FormGroup;
   user!: User;
   constructor(private readonly messageService: MessageService) {
