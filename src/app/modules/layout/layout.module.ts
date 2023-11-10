@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { SharedModule } from '../../shared/shared.module';
-import { LayoutContentComponent } from './content/layout-content.component';
-import { LayoutFooterComponent } from './footer/layout-footer.component';
+import { LayoutContentComponent } from './layout-content/layout-content.component';
+import { LayoutFooterComponent } from './layout-footer/layout-footer.component';
+import { LayoutNavComponent } from './layout-nav/layout-nav.component';
 import { LayoutComponent } from './layout.component';
-import { LayoutNavComponent } from './nav/layout-nav.component';
 
 @NgModule({
   declarations: [
