@@ -12,6 +12,7 @@ import { User } from '../../../../shared/models/user';
 export class AccountLoginComponent implements OnInit {
   formLogin!: FormGroup;
   user!: User;
+
   constructor(
     private readonly messageService: MessageService,
     private readonly router: Router,
@@ -28,7 +29,7 @@ export class AccountLoginComponent implements OnInit {
     });
   };
 
-  onLogin = async () => {
+  onLogin = () => {
     if (this.formLogin.valid) {
       this.messageService.add({
         severity: 'success',

@@ -12,12 +12,12 @@ export class AccountRegisterComponent {
   formLogin!: FormGroup;
   user!: User;
   constructor(private readonly messageService: MessageService) {
-    this.createLoginForm();
+    this.createRegisterForm();
   }
 
   ngOnInit(): void {}
 
-  createLoginForm = () => {
+  createRegisterForm = () => {
     this.formLogin = new FormGroup({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
@@ -27,7 +27,7 @@ export class AccountRegisterComponent {
     });
   };
 
-  onRegister = async () => {
+  onRegister = () => {
     if (this.formLogin.valid) {
       this.messageService.add({
         severity: 'success',
