@@ -11,7 +11,15 @@
           autocomplete="off"
           type="text"
           formControlName="username"
+          [ngClass]="{ 'invalid-input': formLogin.controls['username'].errors }"
         />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['username'].errors?.['required']"
+      >
+        Campo obrigatório.
       </div>
     </div>
 
@@ -21,12 +29,28 @@
         >Password</label
       >
       <div class="col">
-        <p-password
+        <input
           id="password"
+          type="password"
+          pattern="^[a-zA-Z0-9_@#\\&\\$]{6,18}$"
           formControlName="password"
-          [feedback]="false"
-          [toggleMask]="true"
-        ></p-password>
+          [ngClass]="{ 'invalid-input': formLogin.controls['password'].errors }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['password'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['password'].hasError('pattern')"
+      >
+        A senha deve ter entre 6 e 18 caracteres alfanuméricos ou os caracteres
+        especiais permitidos.
       </div>
     </div>
 
@@ -36,12 +60,29 @@
         >Confirm Password</label
       >
       <div class="col">
-        <p-password
+        <input
           id="confirmPassword"
+          type="password"
           formControlName="confirmPassword"
-          [feedback]="false"
-          [toggleMask]="true"
-        ></p-password>
+          pattern="^[a-zA-Z0-9_@#\\&\\$]{6,18}$"
+          [ngClass]="{
+            'invalid-input': formLogin.controls['confirmPassword'].errors
+          }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['confirmPassword'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['confirmPassword'].hasError('pattern')"
+      >
+        A senha deve ter entre 6 e 18 caracteres alfanuméricos ou os caracteres
+        especiais permitidos.
       </div>
     </div>
 
@@ -54,7 +95,15 @@
           autocomplete="off"
           type="text"
           formControlName="name"
+          [ngClass]="{ 'invalid-input': formLogin.controls['name'].errors }"
         />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['name'].errors?.['required']"
+      >
+        Campo obrigatório.
       </div>
     </div>
 
@@ -67,7 +116,22 @@
           autocomplete="off"
           type="text"
           formControlName="email"
+          [ngClass]="{ 'invalid-input': formLogin.controls['email'].errors }"
         />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['email'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['email'].errors?.['email']"
+      >
+        Email invalido.
       </div>
     </div>
 

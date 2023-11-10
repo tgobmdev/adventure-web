@@ -15,6 +15,7 @@ export class AccountRegisterComponent {
 
   constructor(private readonly messageService: MessageService) {
     this.createRegisterForm();
+    console.log(this.formLogin.controls['email'].errors);
   }
 
   createRegisterForm = () => {
@@ -23,7 +24,7 @@ export class AccountRegisterComponent {
       password: new FormControl('', [Validators.required]),
       confirmPassword: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
     });
   };
 
