@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { User } from '../../../../shared/models/user';
 
@@ -11,7 +12,11 @@ import { User } from '../../../../shared/models/user';
 export class AccountLoginComponent implements OnInit {
   formLogin!: FormGroup;
   user!: User;
-  constructor(private readonly messageService: MessageService) {
+
+  constructor(
+    private readonly messageService: MessageService,
+    private readonly router: Router,
+  ) {
     this.createLoginForm();
   }
 
@@ -24,11 +29,27 @@ export class AccountLoginComponent implements OnInit {
     });
   };
 
-  onLogin = async () => {
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Success',
-      detail: 'Logado com Sucesso!',
-    });
+  disableButtonForm = () => {
+    return this.formLogin.invalid ? true : false;
+  };
+
+  onLogin = () => {
+    if (this.formLogin.valid) {
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'Logado com Sucesso!',
+      });
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Erro',
+      });
+    }
+  };
+
+  redirectToRegister = async () => {
+    this.router.navigate(['account/register']);
   };
 }

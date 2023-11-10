@@ -10,24 +10,49 @@
           autocomplete="off"
           type="text"
           formControlName="username"
+          [ngClass]="{ 'invalid-input': formLogin.controls['username'].errors }"
         />
       </div>
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['username'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
     </div>
+
     <div class="field grid">
       <label for="password" class="col-fixed" style="width: 100px"
         >Password</label
       >
       <div class="col">
-        <p-password
+        <input
           id="password"
+          type="password"
           formControlName="password"
-          [feedback]="false"
-          [toggleMask]="true"
-        ></p-password>
+          [ngClass]="{ 'invalid-input': formLogin.controls['password'].errors }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formLogin.controls['username'].errors?.['required']"
+      >
+        Campo obrigatório.
       </div>
     </div>
+
     <div class="field grid" style="margin-top: 30px">
-      <app-button label="Entrar" (click)="onLogin()"></app-button>
+      <app-button
+        label="Registrar"
+        (click)="redirectToRegister()"
+        style="margin-right: 20px"
+      ></app-button>
+      <app-button
+        label="Entrar"
+        (click)="onLogin()"
+        [disabled]="disableButtonForm()"
+      ></app-button>
     </div>
   </app-card-form>
 </div>

@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./layout-nav.component.scss'],
 })
 export class LayoutNavComponent {
+  loggedUser: boolean = false;
+
   constructor(private readonly router: Router) {}
 
   redirectToPage = (route: string) => {
@@ -19,6 +21,10 @@ export class LayoutNavComponent {
 
   redirectToLoginPage = () => {
     this.redirectToPage('account/login');
+  };
+
+  redirectToUserPage = () => {
+    this.redirectToPage('account/:id');
   };
 
   redirectToDestinationPage = () => {
