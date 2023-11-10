@@ -72,7 +72,11 @@
     </div>
 
     <div class="field grid" style="margin-top: 30px">
-      <app-button label="Enviar" (click)="onRegister()"></app-button>
+      <app-button
+        label="Enviar"
+        (click)="onRegister()"
+        [disabled]="disableButtonForm()"
+      ></app-button>
     </div>
   </app-card-form>
 </div>
