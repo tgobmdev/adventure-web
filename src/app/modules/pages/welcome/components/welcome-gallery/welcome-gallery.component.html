@@ -1,0 +1,27 @@
+<div class="section no-pad-bot">
+  <div class="container" style="margin-bottom: 30px">
+    <div class="row center">
+      <h5
+        class="header col s12 light"
+        style="
+          color: black;
+          font-weight: bold;
+          font-family: 'Montserrat', sans-serif, Arial, sans-serif;
+        "
+      >
+        Galerias
+      </h5>
+    </div>
+    <div class="container">
+      <app-gallery
+        [data]="images"
+        [showItemNavigators]="true"
+        [showThumbnails]="false"
+        [showIndicators]="true"
+        [showIndicatorsOnItem]="true"
+        [containerStyle]="{ 'max-width': '1024px' }"
+      >
+      </app-gallery>
+    </div>
+  </div>
+</div>

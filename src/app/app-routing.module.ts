@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WelcomeComponent } from './modules/pages/welcome/welcome.component';
 
 const WELCOME = {
   path: 'welcome',
-  component: WelcomeComponent,
+  loadChildren: () =>
+    import('../app/modules/pages/welcome/welcome.module').then(
+      (m) => m.WelcomeModule,
+    ),
 };
 
 const ACCOUNT = {
@@ -23,7 +25,23 @@ const DESTINATION = {
     ),
 };
 
-const routes: Routes = [WELCOME, ACCOUNT, DESTINATION];
+const TRAVELS = {
+  path: 'travels',
+  loadChildren: () =>
+    import('../app/modules/pages/travel/travel.module').then(
+      (m) => m.TravelModule,
+    ),
+};
+
+const ROADMAPS = {
+  path: 'roadmaps',
+  loadChildren: () =>
+    import('../app/modules/pages/roadmap/roadmap.module').then(
+      (m) => m.RoadmapModule,
+    ),
+};
+
+const routes: Routes = [WELCOME, ACCOUNT, DESTINATION, TRAVELS, ROADMAPS];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

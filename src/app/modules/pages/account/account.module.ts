@@ -6,12 +6,14 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { ToastModule } from 'primeng/toast';
+import { SharedModule } from '../../../shared/shared.module';
+import { AccountLoginComponent } from './account-login/account-login.component';
+import { AccountRegisterComponent } from './account-register/account-register.component';
 import { AccountRoutingModule } from './account-routing.module';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [AccountLoginComponent, AccountRegisterComponent],
   imports: [
     CommonModule,
     CardModule,
@@ -19,6 +21,8 @@ import { RegisterComponent } from './register/register.component';
     PasswordModule,
     ButtonModule,
     ReactiveFormsModule,
+    SharedModule,
+    ToastModule,
     AccountRoutingModule,
   ],
 })
