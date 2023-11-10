@@ -5,17 +5,19 @@ O projeto tem como objetivo criar uma plataforma web intuitiva e envolvente que 
 ## Endereço de Deploy - GitHub Pages
 
 ## Protótipo
+
 https://www.figma.com/file/aGjosAFWlm40GUgbWsjoLH/mockup-adventure-web?type=design&node-id=0%3A1&mode=design&t=fj8Blo1kaQQwVYYe-1
 
 ## Checklist
-- [ ] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
-- [ ] Usar componentes de framework CSS (Bootstrap, Materialize, PrimeNG).
-- [ ] Apresentar as telas com layout responsivo.
-- [ ] Desenvolver o layout da aplicação com componentes, tornando o cabeçalho e o rodapé componentes reutilizáveis.
-- [ ] Aplicar pelo menos dois tipos de data-binding (Interpolation, Property Binding, Event Binding e Two Way Data Binding).
-- [ ] Passar dados via hierarquia de componentes, ou seja, usando @Input ou @Output.
-- [ ] Mapear componentes à rotas no módulo de rotas.
-- [ ] Criar navegação entre páginas por meio de rotas.
+
+- [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
+- [x] Usar componentes de framework CSS (Bootstrap, Materialize, PrimeNG).
+- [x] Apresentar as telas com layout responsivo.
+- [x] Desenvolver o layout da aplicação com componentes, tornando o cabeçalho e o rodapé componentes reutilizáveis.
+- [x] Aplicar pelo menos dois tipos de data-binding (Interpolation, Property Binding, Event Binding e Two Way Data Binding).
+- [x] Passar dados via hierarquia de componentes, ou seja, usando @Input ou @Output.
+- [x] Mapear componentes à rotas no módulo de rotas.
+- [x] Criar navegação entre páginas por meio de rotas.
 - [ ] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
 - [ ] Validar os campos do formulário com expressões regulares (REGEX) e apresentar as mensagens de erro.
 - [ ] Desabilitar o botão de submit enquanto o formulário está inválido.

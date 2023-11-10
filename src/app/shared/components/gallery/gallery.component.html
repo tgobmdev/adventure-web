@@ -1,0 +1,12 @@
+<p-galleria
+  [value]="data"
+  [showItemNavigators]="showItemNavigators"
+  [showThumbnails]="showThumbnails"
+  [showIndicators]="showIndicators"
+  [showIndicatorsOnItem]="showIndicatorsOnItem"
+  [containerStyle]="containerStyle"
+>
+  <ng-template pTemplate="item" let-item>
+    <img class="img-template" [src]="item.itemImageSrc" />
+  </ng-template>
+</p-galleria>
