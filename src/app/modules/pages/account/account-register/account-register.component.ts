@@ -28,10 +28,18 @@ export class AccountRegisterComponent {
   };
 
   onRegister = async () => {
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Success',
-      detail: 'Registrado com Sucesso!',
-    });
+    if (this.formLogin.valid) {
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'Registrado com Sucesso!',
+      });
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Erro',
+      });
+    }
   };
 }

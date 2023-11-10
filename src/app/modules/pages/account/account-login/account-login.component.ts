@@ -29,11 +29,19 @@ export class AccountLoginComponent implements OnInit {
   };
 
   onLogin = async () => {
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Success',
-      detail: 'Logado com Sucesso!',
-    });
+    if (this.formLogin.valid) {
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'Logado com Sucesso!',
+      });
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Erro',
+      });
+    }
   };
 
   redirectToRegister = async () => {
