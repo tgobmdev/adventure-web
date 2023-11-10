@@ -1,1 +1,78 @@
-<p>register works!</p>
+<div class="container">
+  <app-card-form [formGroup]="formLogin">
+    <!--Username-->
+    <div class="field grid">
+      <label for="username" class="col-fixed" style="width: 100px"
+        >Username</label
+      >
+      <div class="col">
+        <input
+          id="username"
+          autocomplete="off"
+          type="text"
+          formControlName="username"
+        />
+      </div>
+    </div>
+
+    <!--Password-->
+    <div class="field grid">
+      <label for="password" class="col-fixed" style="width: 100px"
+        >Password</label
+      >
+      <div class="col">
+        <p-password
+          id="password"
+          formControlName="password"
+          [feedback]="false"
+          [toggleMask]="true"
+        ></p-password>
+      </div>
+    </div>
+
+    <!--Confirm Password-->
+    <div class="field grid">
+      <label for="confirmPassword" class="col-fixed" style="width: 100px"
+        >Confirm Password</label
+      >
+      <div class="col">
+        <p-password
+          id="confirmPassword"
+          formControlName="confirmPassword"
+          [feedback]="false"
+          [toggleMask]="true"
+        ></p-password>
+      </div>
+    </div>
+
+    <!--Name-->
+    <div class="field grid">
+      <label for="name" class="col-fixed" style="width: 100px">Name</label>
+      <div class="col">
+        <input
+          id="name"
+          autocomplete="off"
+          type="text"
+          formControlName="name"
+        />
+      </div>
+    </div>
+
+    <!--Email-->
+    <div class="field grid">
+      <label for="email" class="col-fixed" style="width: 100px">Email</label>
+      <div class="col">
+        <input
+          id="email"
+          autocomplete="off"
+          type="text"
+          formControlName="email"
+        />
+      </div>
+    </div>
+
+    <div class="field grid" style="margin-top: 30px">
+      <app-button label="Enviar" (click)="onRegister()"></app-button>
+    </div>
+  </app-card-form>
+</div>
