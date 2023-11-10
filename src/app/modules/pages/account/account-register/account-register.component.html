@@ -1,5 +1,5 @@
 <div class="container">
-  <app-card-form [formGroup]="formLogin">
+  <app-card-form [formGroup]="formRegister">
     <!--Username-->
     <div class="field grid">
       <label for="username" class="col-fixed" style="width: 100px"
@@ -11,13 +11,15 @@
           autocomplete="off"
           type="text"
           formControlName="username"
-          [ngClass]="{ 'invalid-input': formLogin.controls['username'].errors }"
+          [ngClass]="{
+            'invalid-input': formRegister.controls['username'].errors
+          }"
         />
       </div>
 
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['username'].errors?.['required']"
+        [hidden]="!formRegister.controls['username'].errors?.['required']"
       >
         Campo obrigatório.
       </div>
@@ -34,20 +36,22 @@
           type="password"
           pattern="^[a-zA-Z0-9_@#\\&\\$]{6,18}$"
           formControlName="password"
-          [ngClass]="{ 'invalid-input': formLogin.controls['password'].errors }"
+          [ngClass]="{
+            'invalid-input': formRegister.controls['password'].errors
+          }"
         />
       </div>
 
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['password'].errors?.['required']"
+        [hidden]="!formRegister.controls['password'].errors?.['required']"
       >
         Campo obrigatório.
       </div>
 
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['password'].hasError('pattern')"
+        [hidden]="!formRegister.controls['password'].hasError('pattern')"
       >
         A senha deve ter entre 6 e 18 caracteres alfanuméricos ou os caracteres
         especiais permitidos.
@@ -66,20 +70,20 @@
           formControlName="confirmPassword"
           pattern="^[a-zA-Z0-9_@#\\&\\$]{6,18}$"
           [ngClass]="{
-            'invalid-input': formLogin.controls['confirmPassword'].errors
+            'invalid-input': formRegister.controls['confirmPassword'].errors
           }"
         />
       </div>
 
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['confirmPassword'].errors?.['required']"
+        [hidden]="!formRegister.controls['confirmPassword'].errors?.['required']"
       >
         Campo obrigatório.
       </div>
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['confirmPassword'].hasError('pattern')"
+        [hidden]="!formRegister.controls['confirmPassword'].hasError('pattern')"
       >
         A senha deve ter entre 6 e 18 caracteres alfanuméricos ou os caracteres
         especiais permitidos.
@@ -95,13 +99,13 @@
           autocomplete="off"
           type="text"
           formControlName="name"
-          [ngClass]="{ 'invalid-input': formLogin.controls['name'].errors }"
+          [ngClass]="{ 'invalid-input': formRegister.controls['name'].errors }"
         />
       </div>
 
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['name'].errors?.['required']"
+        [hidden]="!formRegister.controls['name'].errors?.['required']"
       >
         Campo obrigatório.
       </div>
@@ -116,20 +120,20 @@
           autocomplete="off"
           type="text"
           formControlName="email"
-          [ngClass]="{ 'invalid-input': formLogin.controls['email'].errors }"
+          [ngClass]="{ 'invalid-input': formRegister.controls['email'].errors }"
         />
       </div>
 
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['email'].errors?.['required']"
+        [hidden]="!formRegister.controls['email'].errors?.['required']"
       >
         Campo obrigatório.
       </div>
 
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['email'].errors?.['email']"
+        [hidden]="!formRegister.controls['email'].errors?.['email']"
       >
         Email invalido.
       </div>
