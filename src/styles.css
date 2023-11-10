@@ -17,3 +17,9 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   background: rgb(230, 231, 231);
 }
+
+input.invalid-input {
+  border-color: red !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid red !important;
+}

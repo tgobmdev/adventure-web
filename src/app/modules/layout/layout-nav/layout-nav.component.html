@@ -11,6 +11,14 @@
           >Iniciar Sessão</a
         >
       </li>
+      <li>
+        <a
+          *ngIf="loggedUser"
+          class="waves-effect waves-light btn"
+          (click)="redirectToUserPage()"
+          ><span class="pi pi-user"></span
+        ></a>
+      </li>
     </ul>
   </div>
   <div class="bg-main nav-content">
