@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { User } from '../../../../shared/models/User';
+import { User } from '../../../../shared/models/user';
 
 @Component({
   selector: 'app-login',

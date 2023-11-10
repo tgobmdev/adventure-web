@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ImageGallery } from './models/image-gallery';
 
 @Component({
   selector: 'app-gallery',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent {
-  @Input() data!: any;
+  @Input() data!: ImageGallery[];
   @Input() showItemNavigators!: boolean;
   @Input() showThumbnails!: boolean;
   @Input() showIndicators!: boolean;
