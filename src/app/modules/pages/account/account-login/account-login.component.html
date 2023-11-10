@@ -32,7 +32,11 @@
         (click)="redirectToRegister()"
         style="margin-right: 20px"
       ></app-button>
-      <app-button label="Entrar" (click)="onLogin()"></app-button>
+      <app-button
+        label="Entrar"
+        (click)="onLogin()"
+        [disabled]="disableButtonForm()"
+      ></app-button>
     </div>
   </app-card-form>
 </div>

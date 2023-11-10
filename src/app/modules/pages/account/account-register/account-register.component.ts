@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { User } from '../../../../shared/models/user';
@@ -8,7 +8,7 @@ import { User } from '../../../../shared/models/user';
   templateUrl: './account-register.component.html',
   styleUrls: ['./account-register.component.scss'],
 })
-export class AccountRegisterComponent implements OnChanges {
+export class AccountRegisterComponent {
   formLogin!: FormGroup;
   user!: User;
   buttonDisabled: boolean = false;
@@ -16,10 +16,6 @@ export class AccountRegisterComponent implements OnChanges {
   constructor(private readonly messageService: MessageService) {
     this.createRegisterForm();
   }
-
-  ngOnChanges(changes: SimpleChanges): void {}
-
-  ngOnInit(): void {}
 
   createRegisterForm = () => {
     this.formLogin = new FormGroup({
