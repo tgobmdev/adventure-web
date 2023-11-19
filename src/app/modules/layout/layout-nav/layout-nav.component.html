@@ -7,7 +7,10 @@
     >
     <ul class="right hide-on-med-and-down">
       <li>
-        <a class="waves-effect waves-light btn" (click)="redirectToLoginPage()"
+        <a
+          *ngIf="!loggedUser"
+          class="waves-effect waves-light btn"
+          (click)="redirectToLoginPage()"
           >Iniciar Sessão</a
         >
       </li>
@@ -18,6 +21,14 @@
           (click)="redirectToUserPage()"
           ><span class="pi pi-user"></span
         ></a>
+      </li>
+      <li>
+        <a
+          *ngIf="loggedUser"
+          class="waves-effect waves-light btn"
+          (click)="redirectToWelcomePage()"
+          >Sair</a
+        >
       </li>
     </ul>
   </div>

@@ -28,6 +28,7 @@ export class AccountLoginService extends ApiPromiseService {
       if (!user) {
         throw new Error('Usuário ou senha invalidos!');
       }
+      sessionStorage.setItem('user', JSON.stringify(user));
       this.loginEmitterService.setData(true);
     }
   };
