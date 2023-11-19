@@ -1,9 +1,7 @@
 <div class="container">
   <app-card-form [formGroup]="formLogin">
     <div class="field grid">
-      <label for="username" class="col-fixed" style="width: 100px"
-        >Username</label
-      >
+      <label for="username" class="col-fixed">Username</label>
       <div class="col">
         <input
           id="username"
@@ -22,9 +20,7 @@
     </div>
 
     <div class="field grid">
-      <label for="password" class="col-fixed" style="width: 100px"
-        >Password</label
-      >
+      <label for="password" class="col-fixed">Password</label>
       <div class="col">
         <input
           id="password"
@@ -42,11 +38,11 @@
       </div>
     </div>
 
-    <div class="field grid" style="margin-top: 30px">
+    <div class="field grid">
       <app-button
         label="Registrar"
         (click)="redirectToRegister()"
-        style="margin-right: 20px"
+        class="mr-20"
       ></app-button>
       <app-button
         label="Entrar"
