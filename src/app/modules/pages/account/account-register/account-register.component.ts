@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { User } from '../../../../shared/models/user';
+import { AccountRegisterService } from '../service/account-register.service';
 
 @Component({
   selector: 'app-account-register',
@@ -13,7 +14,10 @@ export class AccountRegisterComponent {
   user!: User;
   buttonDisabled: boolean = false;
 
-  constructor(private readonly messageService: MessageService) {
+  constructor(
+    private readonly messageService: MessageService,
+    private readonly accountRegisterService: AccountRegisterService,
+  ) {
     this.createRegisterForm();
   }
 
@@ -52,19 +56,22 @@ export class AccountRegisterComponent {
         return;
       }
       this.createUser();
-      localStorage.setItem('user', JSON.stringify(this.user));
-
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Success',
-        detail: 'Registrado com Sucesso!',
-      });
-    } else {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'Erro',
-      });
+      this.accountRegisterService.registerUser(this.user).then(
+        (_response) => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Registrado com Sucesso!',
+          });
+        },
+        (error) => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: error,
+          });
+        },
+      );
     }
   };
 
