@@ -1,13 +1,17 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserLoginRequest } from '../../../../shared/dto/request/user-login-request';
 import { ApiPromiseService } from '../../../../shared/services/api-promise.service';
+import { LoginEmitterService } from './login-emitter.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AccountLoginService extends ApiPromiseService {
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private readonly loginEmitterService: LoginEmitterService,
+  ) {
     super();
   }
 
@@ -17,11 +21,14 @@ export class AccountLoginService extends ApiPromiseService {
         `users?username=${userLoginRequest.username}`,
       );
       const user = users.find(
-        (user: any) => user.username === userLoginRequest.username,
+        (user: any) =>
+          user.username === userLoginRequest.username &&
+          user.password === userLoginRequest.password,
       );
       if (!user) {
-        throw new Error('Usuário não encontrado!');
+        throw new Error('Usuário ou senha invalidos!');
       }
+      this.loginEmitterService.setData(true);
     }
   };
 
