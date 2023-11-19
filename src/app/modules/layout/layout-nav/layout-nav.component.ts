@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginEmitterService } from '../../pages/account/service/login-emitter.service';
 
 @Component({
   selector: 'app-layout-nav',
@@ -9,7 +10,14 @@ import { Router } from '@angular/router';
 export class LayoutNavComponent {
   loggedUser: boolean = false;
 
-  constructor(private readonly router: Router) {}
+  constructor(
+    private readonly router: Router,
+    private readonly loginEmitterService: LoginEmitterService,
+  ) {
+    this.loginEmitterService.loggedUser.subscribe((data: boolean) => {
+      this.loggedUser = data;
+    });
+  }
 
   redirectToPage = (route: string) => {
     this.router.navigate([route]);

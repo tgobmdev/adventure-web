@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MessageService } from 'primeng/api';
-import { User } from '../../../../shared/models/user';
+import { UserRequest } from '../../../../shared/dto/request/user-request';
+import { CustomMessageService } from '../../../../shared/services/message.service';
+import { AccountRegisterService } from '../service/account-register.service';
 
 @Component({
   selector: 'app-account-register',
@@ -10,10 +11,13 @@ import { User } from '../../../../shared/models/user';
 })
 export class AccountRegisterComponent {
   formRegister!: FormGroup;
-  user!: User;
+  userRequest!: UserRequest;
   buttonDisabled: boolean = false;
 
-  constructor(private readonly messageService: MessageService) {
+  constructor(
+    private readonly messageService: CustomMessageService,
+    private readonly accountRegisterService: AccountRegisterService,
+  ) {
     this.createRegisterForm();
   }
 
@@ -31,41 +35,13 @@ export class AccountRegisterComponent {
     return this.formRegister.invalid ? true : false;
   };
 
-  createUser = () => {
-    this.user = {
-      id: this.generateUniqueId(),
+  createUserRequest = () => {
+    return new UserRequest({
       username: this.formRegister.get('username')?.value,
       password: this.formRegister.get('password')?.value,
       name: this.formRegister.get('name')?.value,
       email: this.formRegister.get('email')?.value,
-    };
-  };
-
-  onRegister = () => {
-    if (this.formRegister.valid) {
-      if (this.checkPasswordMatch()) {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: 'As senhas não coincidem.',
-        });
-        return;
-      }
-      this.createUser();
-      localStorage.setItem('user', JSON.stringify(this.user));
-
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Success',
-        detail: 'Registrado com Sucesso!',
-      });
-    } else {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'Erro',
-      });
-    }
+    });
   };
 
   checkPasswordMatch = (): boolean => {
@@ -74,10 +50,21 @@ export class AccountRegisterComponent {
     return password !== confirmPassword ? true : false;
   };
 
-  generateUniqueId = () => {
-    return (
-      new Date().getTime().toString(16) +
-      Math.floor(Math.random() * 1000).toString(16)
-    );
+  onRegister = () => {
+    if (this.formRegister.valid) {
+      if (this.checkPasswordMatch()) {
+        this.messageService.sendError('As senhas não coincidem.');
+        return;
+      }
+      this.userRequest = this.createUserRequest();
+      this.accountRegisterService.registerUser(this.userRequest).then(
+        (_response) => {
+          this.messageService.sendSucess('Registrado com Sucesso!');
+        },
+        (error) => {
+          this.messageService.sendError(error);
+        },
+      );
+    }
   };
 }

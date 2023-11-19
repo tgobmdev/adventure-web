@@ -1,4 +1,13 @@
 {
+  "users": [
+    {
+      "id": "18be951fd3b10c",
+      "username": "admin",
+      "password": "adminadmin",
+      "name": "admin",
+      "email": "admin@admin.com"
+    }
+  ],
   "destinations": [
     {
       "nomeDestino": "Blumenau",
