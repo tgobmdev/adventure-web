@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserLoginRequest } from '../../../../shared/dto/request/user-login-request';
 import { ApiPromiseService } from '../../../../shared/services/api-promise.service';
