@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from 'primeng/api';
 import { Columns } from '../../../../shared/components/table/models/columns';
+import { CustomMessageService } from '../../../../shared/services/message.service';
 import { DestinationService } from '../destination.service';
 import { DestinationResponse } from '../dto/destination-response';
 
@@ -14,7 +14,7 @@ export class DestinationListComponent implements OnInit {
   destinations!: DestinationResponse[];
 
   constructor(
-    private readonly messageService: MessageService,
+    private readonly messageService: CustomMessageService,
     private readonly destinationService: DestinationService,
   ) {}
 
@@ -42,11 +42,7 @@ export class DestinationListComponent implements OnInit {
         this.destinations = destinations;
       },
       error: (error) => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: error,
-        });
+        this.messageService.sendError(error);
       },
     });
   };

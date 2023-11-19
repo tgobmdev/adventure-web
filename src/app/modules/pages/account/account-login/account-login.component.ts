@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MessageService } from 'primeng/api';
 import { UserLoginRequest } from '../../../../shared/dto/request/user-login-request';
+import { CustomMessageService } from '../../../../shared/services/message.service';
 import { AccountLoginService } from '../service/account-login.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class AccountLoginComponent implements OnInit {
   userLoginRequest!: UserLoginRequest;
 
   constructor(
-    private readonly messageService: MessageService,
+    private readonly messageService: CustomMessageService,
     private readonly accountLoginService: AccountLoginService,
   ) {
     this.createUserLoginForm();
@@ -49,18 +49,11 @@ export class AccountLoginComponent implements OnInit {
       this.userLoginRequest = this.createUserLoginRequest();
       this.accountLoginService.loginUser(this.userLoginRequest).then(
         (_response) => {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Success',
-            detail: 'Logado com Sucesso!',
-          });
+          this.messageService.sendSucess('Logado com Sucesso!');
+          this.accountLoginService.redirectToWelcomePage();
         },
         (error) => {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Error',
-            detail: error,
-          });
+          this.messageService.sendError(error);
         },
       );
     }

@@ -8,12 +8,8 @@ import { generateUniqueId } from '../../../../shared/utils/generate-unique-id';
 })
 export class AccountRegisterService extends ApiPromiseService {
   registerUser = async (user: UserRequest): Promise<void> => {
-    try {
-      user.id = generateUniqueId();
-      const response = await this.post('users', user);
-      localStorage.setItem('user', JSON.stringify(response));
-    } catch (error) {
-      throw error;
-    }
+    user.id = generateUniqueId();
+    const response = await this.post('users', user);
+    sessionStorage.setItem('user', JSON.stringify(response));
   };
 }

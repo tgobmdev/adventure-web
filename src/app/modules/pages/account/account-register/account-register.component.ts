@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MessageService } from 'primeng/api';
-import { AccountRegisterService } from '../service/account-register.service';
 import { UserRequest } from '../../../../shared/dto/request/user-request';
+import { CustomMessageService } from '../../../../shared/services/message.service';
+import { AccountRegisterService } from '../service/account-register.service';
 
 @Component({
   selector: 'app-account-register',
@@ -15,7 +15,7 @@ export class AccountRegisterComponent {
   buttonDisabled: boolean = false;
 
   constructor(
-    private readonly messageService: MessageService,
+    private readonly messageService: CustomMessageService,
     private readonly accountRegisterService: AccountRegisterService,
   ) {
     this.createRegisterForm();
@@ -44,39 +44,27 @@ export class AccountRegisterComponent {
     });
   };
 
+  checkPasswordMatch = (): boolean => {
+    const password = this.formRegister.get('password')?.value;
+    const confirmPassword = this.formRegister.get('confirmPassword')?.value;
+    return password !== confirmPassword ? true : false;
+  };
+
   onRegister = () => {
     if (this.formRegister.valid) {
       if (this.checkPasswordMatch()) {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: 'As senhas não coincidem.',
-        });
+        this.messageService.sendError('As senhas não coincidem.');
         return;
       }
       this.userRequest = this.createUserRequest();
       this.accountRegisterService.registerUser(this.userRequest).then(
         (_response) => {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Success',
-            detail: 'Registrado com Sucesso!',
-          });
+          this.messageService.sendSucess('Registrado com Sucesso!');
         },
         (error) => {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Error',
-            detail: error,
-          });
+          this.messageService.sendError(error);
         },
       );
     }
-  };
-
-  checkPasswordMatch = (): boolean => {
-    const password = this.formRegister.get('password')?.value;
-    const confirmPassword = this.formRegister.get('confirmPassword')?.value;
-    return password !== confirmPassword ? true : false;
   };
 }
