@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
@@ -24,6 +25,7 @@ import { TableComponent } from './components/table/table.component';
     ReactiveFormsModule,
     GalleriaModule,
     TableModule,
+    HttpClientModule,
   ],
   exports: [
     CardFormComponent,
