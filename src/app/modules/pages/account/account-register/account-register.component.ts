@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { User } from '../../../../shared/models/user';
 import { AccountRegisterService } from '../service/account-register.service';
+import { UserRequest } from '../../../../shared/dto/request/user-request';
 
 @Component({
   selector: 'app-account-register',
@@ -11,7 +11,7 @@ import { AccountRegisterService } from '../service/account-register.service';
 })
 export class AccountRegisterComponent {
   formRegister!: FormGroup;
-  user!: User;
+  userRequest!: UserRequest;
   buttonDisabled: boolean = false;
 
   constructor(
@@ -35,14 +35,13 @@ export class AccountRegisterComponent {
     return this.formRegister.invalid ? true : false;
   };
 
-  createUser = () => {
-    this.user = {
-      id: this.generateUniqueId(),
+  createUserRequest = () => {
+    return new UserRequest({
       username: this.formRegister.get('username')?.value,
       password: this.formRegister.get('password')?.value,
       name: this.formRegister.get('name')?.value,
       email: this.formRegister.get('email')?.value,
-    };
+    });
   };
 
   onRegister = () => {
@@ -55,8 +54,8 @@ export class AccountRegisterComponent {
         });
         return;
       }
-      this.createUser();
-      this.accountRegisterService.registerUser(this.user).then(
+      this.userRequest = this.createUserRequest();
+      this.accountRegisterService.registerUser(this.userRequest).then(
         (_response) => {
           this.messageService.add({
             severity: 'success',
@@ -79,12 +78,5 @@ export class AccountRegisterComponent {
     const password = this.formRegister.get('password')?.value;
     const confirmPassword = this.formRegister.get('confirmPassword')?.value;
     return password !== confirmPassword ? true : false;
-  };
-
-  generateUniqueId = () => {
-    return (
-      new Date().getTime().toString(16) +
-      Math.floor(Math.random() * 1000).toString(16)
-    );
   };
 }

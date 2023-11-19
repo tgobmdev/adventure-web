@@ -37,17 +37,17 @@ export class DestinationListComponent implements OnInit {
   };
 
   findAllDestinations = () => {
-    this.destinationService.getAllDestinations().subscribe(
-      (destinations) => {
+    this.destinationService.getAllDestinations().subscribe({
+      next: (destinations) => {
         this.destinations = destinations;
       },
-      (error) => {
+      error: (error) => {
         this.messageService.add({
           severity: 'error',
           summary: 'Error',
           detail: error,
         });
       },
-    );
+    });
   };
 }

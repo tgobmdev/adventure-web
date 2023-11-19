@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { User } from '../../../../shared/models/user';
+import { UserLoginRequest } from '../../../../shared/dto/request/user-login-request';
+import { AccountLoginService } from '../service/account-login.service';
 
 @Component({
   selector: 'app-account-login',
@@ -10,46 +10,59 @@ import { User } from '../../../../shared/models/user';
   styleUrls: ['./account-login.component.scss'],
 })
 export class AccountLoginComponent implements OnInit {
-  formLogin!: FormGroup;
-  user!: User;
+  userLoginForm!: FormGroup;
+  userLoginRequest!: UserLoginRequest;
 
   constructor(
     private readonly messageService: MessageService,
-    private readonly router: Router,
+    private readonly accountLoginService: AccountLoginService,
   ) {
-    this.createLoginForm();
+    this.createUserLoginForm();
   }
 
   ngOnInit(): void {}
 
-  createLoginForm = () => {
-    this.formLogin = new FormGroup({
+  redirectToRegister = () => {
+    this.accountLoginService.redirectToRegister();
+  };
+
+  createUserLoginForm = () => {
+    this.userLoginForm = new FormGroup({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
     });
   };
 
+  createUserLoginRequest = () => {
+    return new UserLoginRequest({
+      username: this.userLoginForm.get('username')?.value,
+      password: this.userLoginForm.get('password')?.value,
+    });
+  };
+
   disableButtonForm = () => {
-    return this.formLogin.invalid ? true : false;
+    return this.userLoginForm.invalid ? true : false;
   };
 
   onLogin = () => {
-    if (this.formLogin.valid) {
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Success',
-        detail: 'Logado com Sucesso!',
-      });
-    } else {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'Erro',
-      });
+    if (this.userLoginForm.valid) {
+      this.userLoginRequest = this.createUserLoginRequest();
+      this.accountLoginService.loginUser(this.userLoginRequest).then(
+        (_response) => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Logado com Sucesso!',
+          });
+        },
+        (error) => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: error,
+          });
+        },
+      );
     }
-  };
-
-  redirectToRegister = async () => {
-    this.router.navigate(['account/register']);
   };
 }

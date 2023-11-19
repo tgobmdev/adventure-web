@@ -1,5 +1,5 @@
 <div class="container">
-  <app-card-form [formGroup]="formLogin">
+  <app-card-form [formGroup]="userLoginForm">
     <div class="field grid">
       <label for="username" class="col-fixed">Username</label>
       <div class="col">
@@ -8,12 +8,14 @@
           autocomplete="off"
           type="text"
           formControlName="username"
-          [ngClass]="{ 'invalid-input': formLogin.controls['username'].errors }"
+          [ngClass]="{
+            'invalid-input': userLoginForm.controls['username'].errors
+          }"
         />
       </div>
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['username'].errors?.['required']"
+        [hidden]="!userLoginForm.controls['username'].errors?.['required']"
       >
         Campo obrigatório.
       </div>
@@ -26,13 +28,15 @@
           id="password"
           type="password"
           formControlName="password"
-          [ngClass]="{ 'invalid-input': formLogin.controls['password'].errors }"
+          [ngClass]="{
+            'invalid-input': userLoginForm.controls['password'].errors
+          }"
         />
       </div>
 
       <div
         class="red-text"
-        [hidden]="!formLogin.controls['username'].errors?.['required']"
+        [hidden]="!userLoginForm.controls['username'].errors?.['required']"
       >
         Campo obrigatório.
       </div>

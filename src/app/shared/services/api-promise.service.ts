@@ -17,6 +17,17 @@ export class ApiPromiseService {
     return response;
   };
 
+  protected get = async (endpoint: string): Promise<any> => {
+    const url = `${this.apiUrl}/${endpoint}`;
+    try {
+      const response = await fetch(url);
+      this.handleError(response);
+      return await response.json();
+    } catch (error) {
+      throw error;
+    }
+  };
+
   protected post = async (endpoint: string, data: any): Promise<any> => {
     const url = `${this.apiUrl}/${endpoint}`;
     try {
