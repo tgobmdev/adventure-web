@@ -1,7 +1,64 @@
 {
-  "user": {
-    "id": "1",
-    "username": "admin",
-    "password": "admin"
-  }
+  "destinations": [
+    {
+      "nomeDestino": "Blumenau",
+      "estadoDestino": "SC"
+    },
+    {
+      "nomeDestino": "Canela",
+      "estadoDestino": "RS"
+    },
+    {
+      "nomeDestino": "Chapada dos Veadeiros",
+      "estadoDestino": "Goias"
+    },
+    {
+      "nomeDestino": "Diamantina",
+      "estadoDestino": "MG"
+    },
+    {
+      "nomeDestino": "Fernando de Noronha",
+      "estadoDestino": "PE"
+    },
+    {
+      "nomeDestino": "Florianopolis",
+      "estadoDestino": "SC"
+    },
+    {
+      "nomeDestino": "Bonito - Gruta Lago Azul",
+      "estadoDestino": "MS"
+    },
+    {
+      "nomeDestino": "Jericoacoara",
+      "estadoDestino": "CE"
+    },
+    {
+      "nomeDestino": "Joao Pessoa",
+      "estadoDestino": "PB"
+    },
+    {
+      "nomeDestino": "Gramado",
+      "estadoDestino": "RS"
+    },
+    {
+      "nomeDestino": "Ouro Preto",
+      "estadoDestino": "MG"
+    },
+    {
+      "nomeDestino": "Pantanal",
+      "estadoDestino": "MS"
+    },
+    {
+      "nomeDestino": "Peninsula de Marau",
+      "estadoDestino": "BA"
+    },
+    {
+      "nomeDestino": "Petropolis",
+      "estadoDestino": "RJ"
+    },
+    {
+      "nomeDestino": "Belo Horizonte - Praca da Liberdade",
+      "estadoDestino": "MG"
+    }
+  ]
 }
