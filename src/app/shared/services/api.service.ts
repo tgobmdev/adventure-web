@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://my-json-server.typicode.com/tgobmdev/adventure-web';
 
   constructor(protected readonly httpClient: HttpClient) {}
 

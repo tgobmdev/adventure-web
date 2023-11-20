@@ -6,7 +6,6 @@ import { WelcomeCardComponent } from './components/welcome-card/welcome-card.com
 import { WelcomeGalleryComponent } from './components/welcome-gallery/welcome-gallery.component';
 import { WelcomeHeaderComponent } from './components/welcome-header/welcome-header.component';
 import { WelcomeInfoComponent } from './components/welcome-info/welcome-info.component';
-import { WelcomeVideoComponent } from './components/welcome-video/welcome-video.component';
 import { WelcomeRoutingModule } from './welcome-routing.module';
 import { WelcomeComponent } from './welcome.component';
 
@@ -14,7 +13,6 @@ import { WelcomeComponent } from './welcome.component';
   declarations: [
     WelcomeComponent,
     WelcomeHeaderComponent,
-    WelcomeVideoComponent,
     WelcomeCardComponent,
     WelcomeInfoComponent,
     WelcomeGalleryComponent,
