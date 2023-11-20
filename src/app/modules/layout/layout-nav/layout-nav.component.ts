@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginEmitterService } from '../../pages/account/service/login-emitter.service';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-layout-nav',
@@ -12,12 +12,8 @@ export class LayoutNavComponent {
 
   constructor(
     private readonly router: Router,
-    private readonly loginEmitterService: LoginEmitterService,
-  ) {
-    this.loginEmitterService.loggedUser.subscribe((data: boolean) => {
-      this.loggedUser = data;
-    });
-  }
+    private readonly authService: AuthService,
+  ) {}
 
   redirectToPage = (route: string) => {
     this.router.navigate([route]);
@@ -45,5 +41,14 @@ export class LayoutNavComponent {
 
   redirectToRoadmapPage = () => {
     this.redirectToPage('roadmaps');
+  };
+
+  isUserAuthenticated = () => {
+    return this.authService.isAuthenticated();
+  };
+
+  logoutUser = () => {
+    this.authService.isLogout();
+    this.redirectToWelcomePage();
   };
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiPromiseService } from '../../../../shared/services/api-promise.service';
+import { AuthService } from '../../../../shared/services/auth.service';
 import { UserLoginRequest } from '../dto/request/user-login-request';
-import { LoginEmitterService } from './login-emitter.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +10,7 @@ import { LoginEmitterService } from './login-emitter.service';
 export class AccountLoginService extends ApiPromiseService {
   constructor(
     private router: Router,
-    private readonly loginEmitterService: LoginEmitterService,
+    private readonly authService: AuthService,
   ) {
     super();
   }
@@ -28,8 +28,7 @@ export class AccountLoginService extends ApiPromiseService {
       if (!user) {
         throw new Error('Usuário ou senha invalidos!');
       }
-      sessionStorage.setItem('user', JSON.stringify(user));
-      this.loginEmitterService.setData(true);
+      this.authService.isLogged(JSON.stringify(user.id));
     }
   };
 

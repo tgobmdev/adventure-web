@@ -8,7 +8,7 @@
     <ul class="right hide-on-med-and-down">
       <li>
         <a
-          *ngIf="!loggedUser"
+          *ngIf="!isUserAuthenticated()"
           class="waves-effect waves-light btn"
           (click)="redirectToLoginPage()"
           >Iniciar Sessão</a
@@ -16,7 +16,7 @@
       </li>
       <li>
         <a
-          *ngIf="loggedUser"
+          *ngIf="isUserAuthenticated()"
           class="waves-effect waves-light btn"
           (click)="redirectToUserPage()"
           ><span class="pi pi-user"></span
@@ -24,9 +24,9 @@
       </li>
       <li>
         <a
-          *ngIf="loggedUser"
+          *ngIf="isUserAuthenticated()"
           class="waves-effect waves-light btn"
-          (click)="redirectToWelcomePage()"
+          (click)="logoutUser()"
           >Sair</a
         >
       </li>
