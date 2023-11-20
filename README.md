@@ -26,4 +26,4 @@ https://www.figma.com/file/aGjosAFWlm40GUgbWsjoLH/mockup-adventure-web?type=desi
 - [x] Aplicar a diretiva ngFor para apresentar uma lista dinâmica de dados.
 - [x] Usar a diretiva ngIf para controlar a exibição ou ocultação de elementos.
 - [x] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
+- [x] Build e deploy da aplicação.
