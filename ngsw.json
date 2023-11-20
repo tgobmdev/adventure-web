@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1700510938474,
+  "timestamp": 1700511444958,
   "index": "/adventure-web/index.html",
   "assetGroups": [
     {
@@ -122,7 +122,7 @@
     "/adventure-web/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/adventure-web/great-vibes-regular.17d753ff51c66946.ttf": "8f4ea5db6bb52147da5773d4dc2ea051dec4c94c",
     "/adventure-web/hue.8b1818380241e6ac.png": "f81ae627637a684614aa726e206c73ce099a01fd",
-    "/adventure-web/index.html": "eef24bac603baa4bb8df3eb1a49c8b41b64f1112",
+    "/adventure-web/index.html": "1be513f625ebedda71047b28d01a1f27625292a3",
     "/adventure-web/main.3241f465d39025ba.js": "85fdfa9a02db38f2696c825663df69f7f820faa7",
     "/adventure-web/manifest.webmanifest": "795bea0a865e5da866cc84f4e6bb78d92432f2a3",
     "/adventure-web/polyfills.e30dd78b0c437c81.js": "2bbe9e9b642361f3bbdcc3a093d17abd14e34421",
