@@ -48,7 +48,12 @@ export class AccountDetailComponent implements OnInit {
       this.accountDetailService.getUserById(this.id).subscribe({
         next: (response) => {
           this.userResponse = response;
-          this.formDetail.patchValue(this.userResponse);
+          this.formDetail.patchValue({
+            username: this.userResponse.username,
+            password: this.userResponse.password,
+            name: this.userResponse.name,
+            email: this.userResponse.email,
+          });
         },
         error: (error) => {
           this.messageService.sendError(error);
