@@ -7,10 +7,10 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { SharedModule } from '../../../shared/shared.module';
-import { AccountDetailComponent } from './account-detail/account-detail.component';
-import { AccountLoginComponent } from './account-login/account-login.component';
-import { AccountRegisterComponent } from './account-register/account-register.component';
 import { AccountRoutingModule } from './account-routing.module';
+import { AccountRegisterComponent } from './components/account-register/account-register.component';
+import { AccountDetailComponent } from './components/account-detail/account-detail.component';
+import { AccountLoginComponent } from './components/account-login/account-login.component';
 
 @NgModule({
   declarations: [

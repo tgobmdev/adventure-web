@@ -18,12 +18,12 @@ https://www.figma.com/file/aGjosAFWlm40GUgbWsjoLH/mockup-adventure-web?type=desi
 - [x] Passar dados via hierarquia de componentes, ou seja, usando @Input ou @Output.
 - [x] Mapear componentes à rotas no módulo de rotas.
 - [x] Criar navegação entre páginas por meio de rotas.
-- [ ] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
-- [ ] Validar os campos do formulário com expressões regulares (REGEX) e apresentar as mensagens de erro.
-- [ ] Desabilitar o botão de submit enquanto o formulário está inválido.
-- [ ] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
-- [ ] Cadastrar uma entidade usando uma API (JSON Server).
-- [ ] Aplicar a diretiva ngFor para apresentar uma lista dinâmica de dados.
-- [ ] Usar a diretiva ngIf para controlar a exibição ou ocultação de elementos.
-- [ ] Formatar a apresentação de dados com Pipes.
+- [x] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
+- [x] Validar os campos do formulário com expressões regulares (REGEX) e apresentar as mensagens de erro.
+- [x] Desabilitar o botão de submit enquanto o formulário está inválido.
+- [x] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
+- [x] Cadastrar uma entidade usando uma API (JSON Server).
+- [x] Aplicar a diretiva ngFor para apresentar uma lista dinâmica de dados.
+- [x] Usar a diretiva ngIf para controlar a exibição ou ocultação de elementos.
+- [x] Formatar a apresentação de dados com Pipes.
 - [ ] Build e deploy da aplicação.

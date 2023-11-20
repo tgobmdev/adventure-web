@@ -21,4 +21,9 @@ export class ApiService {
     const url = `${this.apiUrl}/${endpoint}`;
     return this.httpClient.get(url).pipe(catchError(this.handleError));
   };
+
+  protected post = (endpoint: string, data: any): Observable<any> => {
+    const url = `${this.apiUrl}/${endpoint}`;
+    return this.httpClient.post(url, data);
+  };
 }

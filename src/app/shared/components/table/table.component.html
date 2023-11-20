@@ -13,7 +13,10 @@
   <ng-template pTemplate="body" let-rowData let-columns="columns">
     <tr>
       <td *ngFor="let col of columns">
-        {{ rowData[col.field] }}
+        <ng-container *ngIf="col.currency; else noCurrency">{{
+          rowData[col.field] | currency : "R$"
+        }}</ng-container>
+        <ng-template #noCurrency>{{ rowData[col.field] }}</ng-template>
       </td>
     </tr>
   </ng-template>
