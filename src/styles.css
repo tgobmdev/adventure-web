@@ -28,3 +28,7 @@ input.invalid-input {
   box-shadow: none !important;
   border-bottom: 2px solid red !important;
 }
+
+.bg-m-text {
+  color: #26a69a !important;
+}
