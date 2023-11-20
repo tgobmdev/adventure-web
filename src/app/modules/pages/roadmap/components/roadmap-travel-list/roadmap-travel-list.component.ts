@@ -41,6 +41,7 @@ export class RoadmapTravelListComponent implements OnInit {
       new Columns({
         header: 'Preço',
         field: 'roadmapPrice',
+        currency: true,
       }),
     ];
   };
