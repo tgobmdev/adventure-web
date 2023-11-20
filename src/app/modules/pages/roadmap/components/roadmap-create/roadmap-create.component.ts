@@ -66,7 +66,7 @@ export class RoadmapCreateComponent implements OnInit {
       this.roadmapService.createRoadmap(this.roadmapRequest).subscribe({
         next: () => {
           this.messageService.sendSucess('Registro criado com Sucesso!');
-          this.redirectToTravel();
+          this.redirectToRoadmapTravelPage();
         },
         error: (error) => {
           this.messageService.sendError(error);
@@ -75,7 +75,7 @@ export class RoadmapCreateComponent implements OnInit {
     }
   };
 
-  redirectToTravel() {
-    this.router.navigate(['travels']);
-  }
+  redirectToRoadmapTravelPage = () => {
+    this.router.navigate(['roadmaps/travels']);
+  };
 }

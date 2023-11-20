@@ -39,7 +39,7 @@ export class LayoutNavComponent {
     this.redirectToPage('destinations');
   };
 
-  redirectToTravelPage = () => {
+  redirectToRoadmapTravelPage = () => {
     this.redirectToPage('roadmaps/travels');
   };
 
