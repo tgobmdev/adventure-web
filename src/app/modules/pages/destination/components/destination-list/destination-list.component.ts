@@ -34,6 +34,11 @@ export class DestinationListComponent implements OnInit {
         header: 'Estado',
         field: 'estadoDestino',
       }),
+      new Columns({
+        header: 'Preço',
+        field: 'precoDestino',
+        currency: true
+      }),
     ];
   };
 

@@ -25,7 +25,17 @@
           id="roadmapAmtPerson"
           type="number"
           formControlName="roadmapAmtPerson"
+          [ngClass]="{
+            'invalid-input': roadmapCreateForm.controls['roadmapAmtPerson'].errors?.['min']
+          }"
         />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!roadmapCreateForm.controls['roadmapAmtPerson'].errors?.['min']"
+      >
+        Valor inválido.
       </div>
     </div>
     <div class="field grid mb-30">
