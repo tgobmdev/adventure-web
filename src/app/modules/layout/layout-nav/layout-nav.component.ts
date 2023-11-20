@@ -28,7 +28,7 @@ export class LayoutNavComponent {
   };
 
   redirectToUserPage = () => {
-    this.redirectToPage('account/:id');
+    this.router.navigate(['account', this.authService.getToken()]);
   };
 
   redirectToDestinationPage = () => {
