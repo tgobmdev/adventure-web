@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../../../shared/services/auth.service';
 import { CustomMessageService } from '../../../../../shared/services/message.service';
 import { DestinationService } from '../../../destination/services/destination.service';
 import { RoadmapRequest } from '../../dto/request/roadmap-request';
@@ -21,6 +22,7 @@ export class RoadmapCreateComponent implements OnInit {
     private readonly destinationService: DestinationService,
     private readonly roadmapService: RoadmapService,
     private readonly router: Router,
+    private readonly authService: AuthService,
   ) {
     this.createRoadmapForm();
   }
@@ -45,6 +47,7 @@ export class RoadmapCreateComponent implements OnInit {
         this.roadmapCreateForm.get('roadmapDestination')?.value,
       roadmapAmtPerson: this.roadmapCreateForm.get('roadmapAmtPerson')?.value,
       roadmapPrice: this.roadmapCreateForm.get('roadmapPrice')?.value,
+      userId: this.authService.getToken(),
     });
   };
 

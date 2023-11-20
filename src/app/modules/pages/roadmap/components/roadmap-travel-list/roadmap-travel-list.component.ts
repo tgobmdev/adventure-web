@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Columns } from '../../../../../shared/components/table/models/columns';
+import { AuthService } from '../../../../../shared/services/auth.service';
 import { CustomMessageService } from '../../../../../shared/services/message.service';
 import { RoadmapTravelResponse } from '../../dto/response/roadmpa-travel-response';
 import { RoadmapService } from '../../services/roadmap.service';
@@ -16,6 +17,7 @@ export class RoadmapTravelListComponent implements OnInit {
   constructor(
     private readonly messageService: CustomMessageService,
     private readonly roadmapService: RoadmapService,
+    private readonly authService: AuthService,
   ) {
     this.createTableColumns();
   }
@@ -49,7 +51,9 @@ export class RoadmapTravelListComponent implements OnInit {
   findAllRoadmaps = () => {
     this.roadmapService.getAllRoadmapTravels().subscribe({
       next: (roadmapTravels) => {
-        this.roadmapTravels = roadmapTravels;
+        this.roadmapTravels = roadmapTravels.filter(
+          (roadmap) => roadmap.userId == this.authService.getToken(),
+        );
       },
       error: (error) => {
         this.messageService.sendError(error);
