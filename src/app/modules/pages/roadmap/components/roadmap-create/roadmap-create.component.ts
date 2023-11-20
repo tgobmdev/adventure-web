@@ -74,7 +74,6 @@ export class RoadmapCreateComponent implements OnInit {
     if (this.roadmapCreateForm.valid) {
       this.roadmapRequest = this.createRoadmapRequest();
       this.calculatePrice();
-      console.log(this.roadmapRequest);
       this.roadmapService.createRoadmap(this.roadmapRequest).subscribe({
         next: () => {
           this.messageService.sendSucess('Registro criado com Sucesso!');
@@ -100,7 +99,7 @@ export class RoadmapCreateComponent implements OnInit {
             this.roadmapCreateForm.get('roadmapAmtPerson')?.value;
           const calculatedPrice =
             destination!.precoDestino * (1 + (roadmapAmtPerson - 1) / 4);
-          this.roadmapRequest.roadmapPrice = calculatedPrice;
+          console.log(calculatedPrice);
         }
       },
     });

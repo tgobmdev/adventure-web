@@ -85,38 +85,5 @@
       "precoDestino": 1305
     }
   ],
-  "roadmaps": [
-    {
-      "roadmapName": "tqwtqw",
-      "roadmapDestination": "Canela",
-      "roadmapAmtPerson": 2,
-      "roadmapPrice": "",
-      "userId": null,
-      "id": 1
-    },
-    {
-      "roadmapName": "wqttqw",
-      "roadmapDestination": "Canela",
-      "roadmapAmtPerson": 2,
-      "roadmapPrice": "",
-      "userId": null,
-      "id": 2
-    },
-    {
-      "roadmapName": "ettwq",
-      "roadmapDestination": "Canela",
-      "roadmapAmtPerson": 2,
-      "roadmapPrice": "",
-      "userId": null,
-      "id": 3
-    },
-    {
-      "roadmapName": "tqwttw",
-      "roadmapDestination": "Blumenau",
-      "roadmapAmtPerson": 2,
-      "roadmapPrice": "",
-      "userId": null,
-      "id": 4
-    }
-  ]
+  "roadmaps": []
 }
