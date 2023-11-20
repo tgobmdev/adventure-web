@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Columns } from '../../../../shared/components/table/models/columns';
-import { TravelResponse } from '../dto/travel-response';
+import { Columns } from '../../../../../shared/components/table/models/columns';
+import { RoadmapTravelResponse } from '../../dto/response/roadmpa-travel-response';
 
 @Component({
-  selector: 'app-travel-list',
-  templateUrl: './travel-list.component.html',
-  styleUrls: ['./travel-list.component.scss'],
+  selector: 'app-roadmap-travel-list',
+  templateUrl: './roadmap-travel-list.component.html',
+  styleUrls: ['./roadmap-travel-list.component.scss'],
 })
-export class TravelListComponent implements OnInit {
+export class RoadmapTravelListComponent implements OnInit {
   cols!: Columns[];
-  travels!: TravelResponse[];
+  travels!: RoadmapTravelResponse[];
 
   ngOnInit(): void {
     this.createTableColumns();
-    this.findAllTravels();
+    this.findAllRoadmaps();
   }
 
   createTableColumns = () => {
@@ -37,6 +37,5 @@ export class TravelListComponent implements OnInit {
     ];
   };
 
-  findAllTravels = () => {
-  };
+  findAllRoadmaps = () => {};
 }

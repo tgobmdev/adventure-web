@@ -70,6 +70,16 @@
       "estadoDestino": "MG"
     }
   ],
-  "travels": [],
-  "roadmaps": []
+  "roadmaps": [
+    {
+      "roadmapName": "ttwq",
+      "roadmapDestination": {
+        "nomeDestino": "Canela",
+        "estadoDestino": "RS"
+      },
+      "roadmapAmtPerson": 2,
+      "roadmapPrice": 2,
+      "id": 1
+    }
+  ]
 }

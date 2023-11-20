@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../../../shared/services/api.service';
 import { Observable } from 'rxjs';
-import { RoadmapRequest } from './models/roadmap-request';
+import { RoadmapRequest } from './dto/request/roadmap-request';
 
 @Injectable({
   providedIn: 'root',

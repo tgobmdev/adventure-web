@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CustomMessageService } from '../../../../shared/services/message.service';
-import { DestinationService } from '../../destination/destination.service';
-import { DestinationResponse } from '../../destination/dto/destination-response';
-import { RoadmapRequest } from '../models/roadmap-request';
-import { RoadmapService } from '../roadmap.service';
+import { CustomMessageService } from '../../../../../shared/services/message.service';
+import { DestinationService } from '../../../destination/destination.service';
+import { DestinationResponse } from '../../../destination/dto/destination-response';
+import { RoadmapRequest } from '../../dto/request/roadmap-request';
+import { RoadmapService } from '../../roadmap.service';
 
 @Component({
   selector: 'app-roadmap-create',
@@ -61,7 +61,6 @@ export class RoadmapCreateComponent implements OnInit {
   };
 
   onSave = () => {
-    console.log(this.roadmapCreateForm);
     if (this.roadmapCreateForm.valid) {
       this.roadmapRequest = this.createRoadmapRequest();
       this.roadmapService.createRoadmap(this.roadmapRequest).subscribe({
