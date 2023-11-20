@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DestinationComponent } from './destination.component';
+import { DestinationListComponent } from './components/destination-list/destination-list.component';
 
-const DESTINATIONS_HOME = { path: '', component: DestinationComponent };
+const DESTINATIONS_LIST = { path: '', component: DestinationListComponent };
 
-const routes: Routes = [DESTINATIONS_HOME];
+const routes: Routes = [DESTINATIONS_LIST];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -7,17 +7,28 @@
     >
     <ul class="right hide-on-med-and-down">
       <li>
-        <a class="waves-effect waves-light btn" (click)="redirectToLoginPage()"
+        <a
+          *ngIf="!isUserAuthenticated()"
+          class="waves-effect waves-light btn"
+          (click)="redirectToLoginPage()"
           >Iniciar Sessão</a
         >
       </li>
       <li>
         <a
-          *ngIf="loggedUser"
+          *ngIf="isUserAuthenticated()"
           class="waves-effect waves-light btn"
           (click)="redirectToUserPage()"
           ><span class="pi pi-user"></span
         ></a>
+      </li>
+      <li>
+        <a
+          *ngIf="isUserAuthenticated()"
+          class="waves-effect waves-light btn"
+          (click)="logoutUser()"
+          >Sair</a
+        >
       </li>
     </ul>
   </div>
@@ -29,7 +40,7 @@
         >
       </li>
       <li class="tab">
-        <a class="clickable-no-select" (click)="redirectToTravelPage()"
+        <a class="clickable-no-select" (click)="redirectToRoadmapTravelPage()"
           >Viagens
         </a>
       </li>

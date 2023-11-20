@@ -1,0 +1,144 @@
+<div class="container">
+  <app-card-form [formGroup]="formRegister">
+    <!--Username-->
+    <div class="field grid">
+      <label for="username" class="col-fixed">Username</label>
+      <div class="col">
+        <input
+          id="username"
+          autocomplete="off"
+          type="text"
+          formControlName="username"
+          [ngClass]="{
+            'invalid-input': formRegister.controls['username'].errors
+          }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formRegister.controls['username'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+    </div>
+
+    <!--Password-->
+    <div class="field grid">
+      <label for="password" class="col-fixed">Password</label>
+      <div class="col">
+        <input
+          id="password"
+          type="password"
+          pattern="^[a-zA-Z0-9_@#\\&\\$]{6,18}$"
+          formControlName="password"
+          [ngClass]="{
+            'invalid-input': formRegister.controls['password'].errors
+          }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formRegister.controls['password'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formRegister.controls['password'].hasError('pattern')"
+      >
+        A senha deve ter entre 6 e 18 caracteres alfanuméricos ou os caracteres
+        especiais permitidos.
+      </div>
+    </div>
+
+    <!--Confirm Password-->
+    <div class="field grid">
+      <label for="confirmPassword" class="col-fixed">Confirm Password</label>
+      <div class="col">
+        <input
+          id="confirmPassword"
+          type="password"
+          formControlName="confirmPassword"
+          pattern="^[a-zA-Z0-9_@#\\&\\$]{6,18}$"
+          [ngClass]="{
+            'invalid-input': formRegister.controls['confirmPassword'].errors
+          }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formRegister.controls['confirmPassword'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+      <div
+        class="red-text"
+        [hidden]="!formRegister.controls['confirmPassword'].hasError('pattern')"
+      >
+        A senha deve ter entre 6 e 18 caracteres alfanuméricos ou os caracteres
+        especiais permitidos.
+      </div>
+    </div>
+
+    <!--Name-->
+    <div class="field grid">
+      <label for="name" class="col-fixed">Name</label>
+      <div class="col">
+        <input
+          id="name"
+          autocomplete="off"
+          type="text"
+          formControlName="name"
+          [ngClass]="{ 'invalid-input': formRegister.controls['name'].errors }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formRegister.controls['name'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+    </div>
+
+    <!--Email-->
+    <div class="field grid">
+      <label for="email" class="col-fixed">Email</label>
+      <div class="col">
+        <input
+          id="email"
+          autocomplete="off"
+          type="text"
+          formControlName="email"
+          [ngClass]="{ 'invalid-input': formRegister.controls['email'].errors }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formRegister.controls['email'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!formRegister.controls['email'].errors?.['email']"
+      >
+        Email invalido.
+      </div>
+    </div>
+
+    <div class="field grid mt-30">
+      <app-button
+        label="Enviar"
+        (click)="onRegister()"
+        [disabled]="disableButtonForm()"
+      ></app-button>
+    </div>
+  </app-card-form>
+</div>

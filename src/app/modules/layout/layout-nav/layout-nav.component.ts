@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../shared/services/auth.service';
+import { CustomMessageService } from '../../../shared/services/message.service';
 
 @Component({
   selector: 'app-layout-nav',
@@ -9,7 +11,10 @@ import { Router } from '@angular/router';
 export class LayoutNavComponent {
   loggedUser: boolean = false;
 
-  constructor(private readonly router: Router) {}
+  constructor(
+    private readonly router: Router,
+    private readonly authService: AuthService,
+  ) {}
 
   redirectToPage = (route: string) => {
     this.router.navigate([route]);
@@ -24,18 +29,27 @@ export class LayoutNavComponent {
   };
 
   redirectToUserPage = () => {
-    this.redirectToPage('account/:id');
+    this.router.navigate(['account', this.authService.getToken()]);
   };
 
   redirectToDestinationPage = () => {
     this.redirectToPage('destinations');
   };
 
-  redirectToTravelPage = () => {
-    this.redirectToPage('travels');
+  redirectToRoadmapTravelPage = () => {
+    this.redirectToPage('roadmaps/travels');
   };
 
   redirectToRoadmapPage = () => {
     this.redirectToPage('roadmaps');
+  };
+
+  isUserAuthenticated = () => {
+    return this.authService.isAuthenticated();
+  };
+
+  logoutUser = () => {
+    this.authService.isLogout();
+    this.redirectToWelcomePage();
   };
 }

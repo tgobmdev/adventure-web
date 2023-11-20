@@ -1,0 +1,58 @@
+<div class="container">
+  <app-card-form [formGroup]="userLoginForm">
+    <div class="field grid">
+      <label for="username" class="col-fixed">Username</label>
+      <div class="col">
+        <input
+          id="username"
+          autocomplete="off"
+          type="text"
+          formControlName="username"
+          [ngClass]="{
+            'invalid-input': userLoginForm.controls['username'].errors
+          }"
+        />
+      </div>
+      <div
+        class="red-text"
+        [hidden]="!userLoginForm.controls['username'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+    </div>
+
+    <div class="field grid">
+      <label for="password" class="col-fixed">Password</label>
+      <div class="col">
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          [ngClass]="{
+            'invalid-input': userLoginForm.controls['password'].errors
+          }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!userLoginForm.controls['username'].errors?.['required']"
+      >
+        Campo obrigatório.
+      </div>
+    </div>
+
+    <div class="field grid">
+      <app-button
+        label="Registrar"
+        (click)="redirectToRegister()"
+        class="mr-20"
+      ></app-button>
+      <app-button
+        label="Entrar"
+        (click)="onLogin()"
+        [disabled]="disableButtonForm()"
+      ></app-button>
+    </div>
+  </app-card-form>
+</div>

@@ -1,0 +1,56 @@
+<div class="container">
+  <app-card-form [formGroup]="roadmapCreateForm">
+    <div class="field grid mb-30">
+      <label for="roadmapName" class="col-fixed">Nome do Roteiro</label>
+      <div class="col">
+        <input id="roadmapName" type="text" formControlName="roadmapName" />
+      </div>
+    </div>
+    <div class="field grid mb-30">
+      <label for="roadmapDestination" class="col-fixed">Destino</label>
+      <div class="col">
+        <p-dropdown
+          formControlName="roadmapDestination"
+          [options]="destinations"
+        ></p-dropdown>
+      </div>
+    </div>
+
+    <div class="field grid mb-30">
+      <label for="roadmapAmtPerson" class="col-fixed"
+        >Quantidade de Pessoas</label
+      >
+      <div class="col">
+        <input
+          id="roadmapAmtPerson"
+          type="number"
+          formControlName="roadmapAmtPerson"
+          [ngClass]="{
+            'invalid-input': roadmapCreateForm.controls['roadmapAmtPerson'].errors?.['min']
+          }"
+        />
+      </div>
+
+      <div
+        class="red-text"
+        [hidden]="!roadmapCreateForm.controls['roadmapAmtPerson'].errors?.['min']"
+      >
+        Valor inválido.
+      </div>
+    </div>
+    <div class="field grid mb-30">
+      <label for="roadmapPrice" class="col-fixed">Preço</label>
+      <div class="col">
+        <p-inputNumber
+          class="input-number"
+          id="roadmapPrice"
+          formControlName="roadmapPrice"
+          [minFractionDigits]="2"
+        ></p-inputNumber>
+      </div>
+    </div>
+    <div class="field grid">
+      <app-button label="Salvar" (click)="onSave()" class="mt-30"></app-button>
+    </div>
+  </app-card-form>
+</div>

@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { CardModule } from 'primeng/card';
+import { SharedModule } from '../../../shared/shared.module';
+import { DestinationListComponent } from './components/destination-list/destination-list.component';
 import { DestinationRoutingModule } from './destination-routing.module';
-import { DestinationComponent } from './destination.component';
 
 @NgModule({
-  declarations: [DestinationComponent],
-  imports: [CommonModule, DestinationRoutingModule, CardModule],
+  declarations: [DestinationListComponent],
+  imports: [CommonModule, SharedModule, DestinationRoutingModule],
 })
 export class DestinationModule {}
