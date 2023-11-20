@@ -22,12 +22,22 @@ export class RoadmapCreateComponent implements OnInit {
     private readonly destinationService: DestinationService,
     private readonly roadmapService: RoadmapService,
     private readonly router: Router,
-  ) {}
+  ) {
+    this.createRoadmapForm();
+  }
 
   ngOnInit(): void {
-    this.createRoadmapForm();
     this.findAllDestinations();
   }
+
+  createRoadmapForm = () => {
+    this.roadmapCreateForm = new FormGroup({
+      roadmapName: new FormControl('', [Validators.required]),
+      roadmapDestination: new FormControl('', [Validators.required]),
+      roadmapAmtPerson: new FormControl('', [Validators.required]),
+      roadmapPrice: new FormControl('', [Validators.required]),
+    });
+  };
 
   createRoadmapRequest = () => {
     return new RoadmapRequest({
@@ -36,15 +46,6 @@ export class RoadmapCreateComponent implements OnInit {
         this.roadmapCreateForm.get('roadmapDestination')?.value,
       roadmapAmtPerson: this.roadmapCreateForm.get('roadmapAmtPerson')?.value,
       roadmapPrice: this.roadmapCreateForm.get('roadmapPrice')?.value,
-    });
-  };
-
-  createRoadmapForm = () => {
-    this.roadmapCreateForm = new FormGroup({
-      roadmapName: new FormControl('', [Validators.required]),
-      roadmapDestination: new FormControl('', [Validators.required]),
-      roadmapAmtPerson: new FormControl('', [Validators.required]),
-      roadmapPrice: new FormControl('', [Validators.required]),
     });
   };
 

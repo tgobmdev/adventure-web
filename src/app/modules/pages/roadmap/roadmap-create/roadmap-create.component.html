@@ -32,21 +32,15 @@
     <div class="field grid">
       <label for="roadmapPrice" class="col-fixed">Preço</label>
       <div class="col">
-        <form formGroup="roadmapCreateForm">
         <p-inputNumber
           id="roadmapPrice"
           formControlName="roadmapPrice"
           [minFractionDigits]="2"
         ></p-inputNumber>
-        </form>
       </div>
     </div>
     <div class="field grid">
-      <app-button
-        label="Salvar"
-        (click)="onSave()"
-        class="mt-30"
-      ></app-button>
+      <app-button label="Salvar" (click)="onSave()" class="mt-30"></app-button>
     </div>
   </app-card-form>
 </div>
