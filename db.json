@@ -11,63 +11,78 @@
   "destinations": [
     {
       "nomeDestino": "Blumenau",
-      "estadoDestino": "SC"
+      "estadoDestino": "SC",
+      "precoDestino": 1400
     },
     {
       "nomeDestino": "Canela",
-      "estadoDestino": "RS"
+      "estadoDestino": "RS",
+      "precoDestino": 1500
     },
     {
       "nomeDestino": "Chapada dos Veadeiros",
-      "estadoDestino": "Goias"
+      "estadoDestino": "Goias",
+      "precoDestino": 1230
     },
     {
       "nomeDestino": "Diamantina",
-      "estadoDestino": "MG"
+      "estadoDestino": "MG",
+      "precoDestino": 1200
     },
     {
       "nomeDestino": "Fernando de Noronha",
-      "estadoDestino": "PE"
+      "estadoDestino": "PE",
+      "precoDestino": 1450
     },
     {
       "nomeDestino": "Florianopolis",
-      "estadoDestino": "SC"
+      "estadoDestino": "SC",
+      "precoDestino": 1000
     },
     {
       "nomeDestino": "Bonito - Gruta Lago Azul",
-      "estadoDestino": "MS"
+      "estadoDestino": "MS",
+      "precoDestino": 980
     },
     {
       "nomeDestino": "Jericoacoara",
-      "estadoDestino": "CE"
+      "estadoDestino": "CE",
+      "precoDestino": 1110
     },
     {
       "nomeDestino": "Joao Pessoa",
-      "estadoDestino": "PB"
+      "estadoDestino": "PB",
+      "precoDestino": 1300
     },
     {
       "nomeDestino": "Gramado",
-      "estadoDestino": "RS"
+      "estadoDestino": "RS",
+      "precoDestino": 1031
     },
     {
       "nomeDestino": "Ouro Preto",
-      "estadoDestino": "MG"
+      "estadoDestino": "MG",
+      "precoDestino": 1100
     },
     {
       "nomeDestino": "Pantanal",
-      "estadoDestino": "MS"
+      "estadoDestino": "MS",
+      "precoDestino": 1300
     },
     {
       "nomeDestino": "Peninsula de Marau",
-      "estadoDestino": "BA"
+      "estadoDestino": "BA",
+      "precoDestino": 1555
     },
     {
       "nomeDestino": "Petropolis",
-      "estadoDestino": "RJ"
+      "estadoDestino": "RJ",
+      "precoDestino": 1300
     },
     {
       "nomeDestino": "Belo Horizonte - Praca da Liberdade",
-      "estadoDestino": "MG"
+      "estadoDestino": "MG",
+      "precoDestino": 1305
     }
   ],
   "roadmaps": []
