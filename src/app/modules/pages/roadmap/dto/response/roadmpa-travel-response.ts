@@ -5,7 +5,7 @@ export class RoadmapTravelResponse {
   roadmapAmtPerson!: number;
   roadmapPrice!: number;
 
-  constructor(values: Object = []) {
+  constructor(values: Object = {}) {
     Object.assign(this, values);
   }
 }

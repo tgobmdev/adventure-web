@@ -2,7 +2,7 @@ export class UserLoginRequest {
   username!: string;
   password!: string;
 
-  constructor(values: Object = []) {
+  constructor(values: Object = {}) {
     Object.assign(this, values);
   }
 }

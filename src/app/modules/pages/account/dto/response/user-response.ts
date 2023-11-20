@@ -4,7 +4,7 @@ export class UserResponse {
   name!: string;
   email!: string;
 
-  constructor(values: Object = []) {
+  constructor(values: Object = {}) {
     Object.assign(this, values);
   }
 }

@@ -5,7 +5,7 @@ export class UserRequest {
   name!: string;
   email!: string;
 
-  constructor(values: Object = []) {
+  constructor(values: Object = {}) {
     Object.assign(this, values);
   }
 }

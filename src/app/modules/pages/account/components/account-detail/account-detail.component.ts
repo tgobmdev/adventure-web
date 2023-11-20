@@ -13,7 +13,6 @@ import { AccountDetailService } from '../../service/account-detail.service';
 export class AccountDetailComponent implements OnInit {
   formDetail!: FormGroup;
   id!: string;
-  userResponse!: UserResponse;
 
   constructor(
     private readonly route: ActivatedRoute,
@@ -47,17 +46,22 @@ export class AccountDetailComponent implements OnInit {
     if (this.id) {
       this.accountDetailService.getUserById(this.id).subscribe({
         next: (response) => {
-          this.userResponse = response;
-          this.formDetail.patchValue({
-            username: this.userResponse.username,
-            password: this.userResponse.password,
-            name: this.userResponse.name,
-            email: this.userResponse.email,
-          });
+          this.updateUserDetailForm(response as UserResponse);
         },
         error: (error) => {
           this.messageService.sendError(error);
         },
+      });
+    }
+  };
+
+  updateUserDetailForm = (userResponse: UserResponse) => {
+    if (Array.isArray(userResponse)) {
+      this.formDetail.patchValue({
+        username: userResponse[0].username,
+        password: userResponse[0].password,
+        name: userResponse[0].name,
+        email: userResponse[0].email,
       });
     }
   };
