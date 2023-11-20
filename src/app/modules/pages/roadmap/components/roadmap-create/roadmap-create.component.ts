@@ -46,13 +46,17 @@ export class RoadmapCreateComponent implements OnInit {
     });
   };
 
-  createRoadmapRequest = () => {
+  createRoadmapRequest = async () => {
+    let valor;
+    await this.calculatePrice().then((price) => {
+      valor = price;
+    });
     return new RoadmapRequest({
       roadmapName: this.roadmapCreateForm.get('roadmapName')?.value,
       roadmapDestination:
         this.roadmapCreateForm.get('roadmapDestination')?.value,
       roadmapAmtPerson: this.roadmapCreateForm.get('roadmapAmtPerson')?.value,
-      roadmapPrice: this.roadmapCreateForm.get('roadmapPrice')?.value,
+      roadmapPrice: valor,
       userId: this.authService.getToken(),
     });
   };
@@ -70,10 +74,11 @@ export class RoadmapCreateComponent implements OnInit {
     });
   };
 
-  onSave = () => {
+  onSave = async () => {
     if (this.roadmapCreateForm.valid) {
-      this.roadmapRequest = this.createRoadmapRequest();
-      this.calculatePrice();
+      this.roadmapRequest = await this.createRoadmapRequest();
+      console.log(this.roadmapRequest);
+
       this.roadmapService.createRoadmap(this.roadmapRequest).subscribe({
         next: () => {
           this.messageService.sendSucess('Registro criado com Sucesso!');
@@ -86,22 +91,25 @@ export class RoadmapCreateComponent implements OnInit {
     }
   };
 
-  calculatePrice = () => {
+  calculatePrice = async (): Promise<number> => {
     const nomeDestino = this.roadmapCreateForm.get('roadmapDestination')?.value;
 
-    this.destinationService.getAllDestinations().subscribe({
-      next: (destinations: DestinationResponse[]) => {
-        const destination = destinations.find(
-          (dest) => dest.nomeDestino === nomeDestino,
-        );
-        if (destination) {
-          const roadmapAmtPerson =
-            this.roadmapCreateForm.get('roadmapAmtPerson')?.value;
-          const calculatedPrice =
-            destination!.precoDestino * (1 + (roadmapAmtPerson - 1) / 4);
-          console.log(calculatedPrice);
-        }
-      },
+    return new Promise<number>((resolve) => {
+      this.destinationService.getAllDestinations().subscribe({
+        next: (destinations: DestinationResponse[]) => {
+          const destination = destinations.find(
+            (dest) => dest.nomeDestino === nomeDestino,
+          );
+
+          if (destination) {
+            const roadmapAmtPerson =
+              this.roadmapCreateForm.get('roadmapAmtPerson')?.value;
+            const calculatedPrice =
+              destination.precoDestino * (1 + (roadmapAmtPerson - 1) / 4);
+            resolve(calculatedPrice);
+          }
+        },
+      });
     });
   };
 
