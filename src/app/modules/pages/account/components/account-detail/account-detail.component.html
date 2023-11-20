@@ -1,1 +1,35 @@
-<p>account-detail works!</p>
+<div class="container">
+  <app-card-form [formGroup]="formDetail">
+    <!--Username-->
+    <div class="field grid">
+      <label for="username" class="col-fixed">Username</label>
+      <div class="col">
+        <input id="username" type="text" formControlName="username" />
+      </div>
+    </div>
+
+    <!--Password-->
+    <div class="field grid">
+      <label for="password" class="col-fixed">Password</label>
+      <div class="col">
+        <input id="password" type="password" formControlName="password" />
+      </div>
+    </div>
+
+    <!--Name-->
+    <div class="field grid">
+      <label for="name" class="col-fixed">Name</label>
+      <div class="col">
+        <input id="name" type="text" formControlName="name" />
+      </div>
+    </div>
+
+    <!--Email-->
+    <div class="field grid">
+      <label for="email" class="col-fixed">Email</label>
+      <div class="col">
+        <input id="email" type="text" formControlName="email" />
+      </div>
+    </div>
+  </app-card-form>
+</div>
