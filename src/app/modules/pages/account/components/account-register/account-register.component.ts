@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomMessageService } from '../../../../../shared/services/message.service';
-import { AccountRegisterService } from '../../service/account-register.service';
 import { UserRequest } from '../../dto/request/user-request';
+import { AccountRegisterService } from '../../services/account-register.service';
 
 @Component({
   selector: 'app-account-register',

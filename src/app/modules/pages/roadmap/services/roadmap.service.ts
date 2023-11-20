@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService } from '../../../shared/services/api.service';
-import { RoadmapRequest } from './dto/request/roadmap-request';
-import { RoadmapTravelResponse } from './dto/response/roadmpa-travel-response';
+import { ApiService } from '../../../../shared/services/api.service';
+import { RoadmapRequest } from '../dto/request/roadmap-request';
+import { RoadmapTravelResponse } from '../dto/response/roadmpa-travel-response';
 
 @Injectable({
   providedIn: 'root',

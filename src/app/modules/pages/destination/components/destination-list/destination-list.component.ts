@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Columns } from '../../../../../shared/components/table/models/columns';
 import { CustomMessageService } from '../../../../../shared/services/message.service';
-import { DestinationService } from '../../destination.service';
+import { DestinationService } from '../../services/destination.service';
 import { DestinationResponse } from '../../dto/response/destination-response';
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Columns } from '../../../../../shared/components/table/models/columns';
 import { CustomMessageService } from '../../../../../shared/services/message.service';
 import { RoadmapTravelResponse } from '../../dto/response/roadmpa-travel-response';
-import { RoadmapService } from '../../roadmap.service';
+import { RoadmapService } from '../../services/roadmap.service';
 
 @Component({
   selector: 'app-roadmap-travel-list',

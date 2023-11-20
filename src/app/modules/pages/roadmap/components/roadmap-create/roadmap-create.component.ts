@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomMessageService } from '../../../../../shared/services/message.service';
-import { DestinationService } from '../../../destination/destination.service';
+import { DestinationService } from '../../../destination/services/destination.service';
 import { RoadmapRequest } from '../../dto/request/roadmap-request';
-import { RoadmapService } from '../../roadmap.service';
+import { RoadmapService } from '../../services/roadmap.service';
 
 @Component({
   selector: 'app-roadmap-create',

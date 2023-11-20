@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CustomMessageService } from '../../../../../shared/services/message.service';
 import { UserResponse } from '../../dto/response/user-response';
-import { AccountDetailService } from '../../service/account-detail.service';
+import { AccountDetailService } from '../../services/account-detail.service';
 
 @Component({
   selector: 'app-account-detail',
