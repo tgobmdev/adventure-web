@@ -1,6 +1,6 @@
 <div class="container">
   <app-card-form [formGroup]="roadmapCreateForm">
-    <div class="field grid">
+    <div class="field grid mb-30">
       <label for="roadmapName" class="col-fixed">Nome do Roteiro</label>
       <div class="col">
         <input id="roadmapName" type="text" formControlName="roadmapName" />
@@ -10,6 +10,7 @@
       <label for="roadmapDestination" class="col-fixed">Destino</label>
       <div class="col">
         <p-dropdown
+          class="mb-30"
           formControlName="roadmapDestination"
           [options]="destinations"
           optionLabel="nomeDestino"
@@ -17,7 +18,7 @@
       </div>
     </div>
 
-    <div class="field grid">
+    <div class="field grid mt-30">
       <label for="roadmapAmtPerson" class="col-fixed"
         >Quantidade de Pessoas</label
       >
@@ -29,10 +30,11 @@
         />
       </div>
     </div>
-    <div class="field grid">
+    <div class="field grid mb-30">
       <label for="roadmapPrice" class="col-fixed">Preço</label>
       <div class="col">
         <p-inputNumber
+          class="input-number"
           id="roadmapPrice"
           formControlName="roadmapPrice"
           [minFractionDigits]="2"
