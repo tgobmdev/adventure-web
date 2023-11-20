@@ -1,5 +1,12 @@
 <div class="section no-pad-bot">
-  <video #srcVideo autoplay loop class="video" style="padding-bottom: 25rem">
+  <video
+    *ngIf="!videoLoaded"
+    #srcVideo
+    autoplay
+    loop
+    class="video"
+    style="padding-bottom: 25rem"
+  >
     <source src="assets/videos/mp4/maragogi.mp4" type="video/mp4" />
   </video>
 </div>
