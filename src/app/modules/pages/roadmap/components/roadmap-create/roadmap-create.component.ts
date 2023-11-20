@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomMessageService } from '../../../../../shared/services/message.service';
 import { DestinationService } from '../../../destination/destination.service';
-import { DestinationResponse } from '../../../destination/dto/destination-response';
+import { DestinationResponse } from '../../../destination/dto/response/destination-response';
 import { RoadmapRequest } from '../../dto/request/roadmap-request';
 import { RoadmapService } from '../../roadmap.service';
 
