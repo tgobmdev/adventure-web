@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserLoginRequest } from '../../../../shared/dto/request/user-login-request';
-import { CustomMessageService } from '../../../../shared/services/message.service';
-import { AccountLoginService } from '../service/account-login.service';
+import { CustomMessageService } from '../../../../../shared/services/message.service';
+import { UserLoginRequest } from '../../dto/request/user-login-request';
+import { AccountLoginService } from '../../service/account-login.service';
 
 @Component({
   selector: 'app-account-login',
