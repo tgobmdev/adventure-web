@@ -44,14 +44,16 @@ export class AccountDetailComponent implements OnInit {
   };
 
   getUserById = () => {
-    this.accountDetailService.getUserById(this.id).subscribe({
-      next: (response) => {
-        this.userResponse = response;
-        this.formDetail.patchValue(this.userResponse);
-      },
-      error: (error) => {
-        this.messageService.sendError(error);
-      },
-    });
+    if (this.id) {
+      this.accountDetailService.getUserById(this.id).subscribe({
+        next: (response) => {
+          this.userResponse = response;
+          this.formDetail.patchValue(this.userResponse);
+        },
+        error: (error) => {
+          this.messageService.sendError(error);
+        },
+      });
+    }
   };
 }
