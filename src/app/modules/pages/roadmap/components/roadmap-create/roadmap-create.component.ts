@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomMessageService } from '../../../../../shared/services/message.service';
 import { DestinationService } from '../../../destination/destination.service';
-import { DestinationResponse } from '../../../destination/dto/response/destination-response';
 import { RoadmapRequest } from '../../dto/request/roadmap-request';
 import { RoadmapService } from '../../roadmap.service';
 
@@ -14,7 +13,7 @@ import { RoadmapService } from '../../roadmap.service';
 })
 export class RoadmapCreateComponent implements OnInit {
   roadmapCreateForm!: FormGroup;
-  destinations!: DestinationResponse[];
+  destinations!: string[];
   roadmapRequest!: RoadmapRequest;
 
   constructor(
@@ -52,7 +51,9 @@ export class RoadmapCreateComponent implements OnInit {
   findAllDestinations = () => {
     this.destinationService.getAllDestinations().subscribe({
       next: (destinations) => {
-        this.destinations = destinations;
+        this.destinations = destinations.map(
+          (destination) => destination.nomeDestino,
+        );
       },
       error: (error) => {
         this.messageService.sendError(error);
