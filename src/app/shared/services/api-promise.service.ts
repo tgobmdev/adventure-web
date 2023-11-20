@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiPromiseService {
-  protected apiUrl = 'http://localhost:3000';
+  protected apiUrl =
+    'https://my-json-server.typicode.com/tgobmdev/adventure-web';
 
   constructor() {}
 

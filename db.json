@@ -85,5 +85,54 @@
       "precoDestino": 1305
     }
   ],
-  "roadmaps": []
+  "roadmaps": [
+    {
+      "roadmapName": "Museu do Diamante",
+      "roadmapDestination": "Diamantina",
+      "roadmapAmtPerson": 3,
+      "roadmapPrice": 1800,
+      "userId": "18be951fd3b10c",
+      "id": 1
+    },
+    {
+      "roadmapName": "Casa de Juscelino",
+      "roadmapDestination": "Diamantina",
+      "roadmapAmtPerson": 3,
+      "roadmapPrice": 1800,
+      "userId": "18be951fd3b10c",
+      "id": 2
+    },
+    {
+      "roadmapName": "Igreja Nossa Senhora do Carmo",
+      "roadmapDestination": "Diamantina",
+      "roadmapAmtPerson": 2,
+      "roadmapPrice": 1500,
+      "userId": "18be951fd3b10c",
+      "id": 3
+    },
+    {
+      "roadmapName": "Catedral São Pedro de Alcântara",
+      "roadmapDestination": "Petropolis",
+      "roadmapAmtPerson": 5,
+      "roadmapPrice": 2600,
+      "userId": "18be951fd3b10c",
+      "id": 4
+    },
+    {
+      "roadmapName": "Museu Imperial",
+      "roadmapDestination": "Petropolis",
+      "roadmapAmtPerson": 10,
+      "roadmapPrice": 4225,
+      "userId": "18be951fd3b10c",
+      "id": 5
+    },
+    {
+      "roadmapName": "Praia do Boldró",
+      "roadmapDestination": "Fernando de Noronha",
+      "roadmapAmtPerson": 4,
+      "roadmapPrice": 2537.5,
+      "userId": null,
+      "id": 6
+    }
+  ]
 }

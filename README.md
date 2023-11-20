@@ -4,6 +4,8 @@ O projeto tem como objetivo criar uma plataforma web intuitiva e envolvente que 
 
 ## Endereço de Deploy - GitHub Pages
 
+https://tgobmdev.github.io/adventure-web/
+
 ## Protótipo
 
 https://www.figma.com/file/aGjosAFWlm40GUgbWsjoLH/mockup-adventure-web?type=design&node-id=0%3A1&mode=design&t=fj8Blo1kaQQwVYYe-1
@@ -26,4 +28,23 @@ https://www.figma.com/file/aGjosAFWlm40GUgbWsjoLH/mockup-adventure-web?type=desi
 - [x] Aplicar a diretiva ngFor para apresentar uma lista dinâmica de dados.
 - [x] Usar a diretiva ngIf para controlar a exibição ou ocultação de elementos.
 - [x] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
+- [x] Build e deploy da aplicação.
+
+## Manual de execução
+
+- Clonar o repositório com `git clone`
+- Fazer checkout no branch `develop` que contém as modificações mais recentes
+- Abrir o projeto no editor Visual Studio Code (VS Code)
+- Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto
+- Instalar as dependências contidas no `package.json`
+  - Comando: `npm i`
+- (Opcional) Instalar o JSON Server globalmente disponível em `https://www.npmjs.com/package/json-server`
+  - Comando: `npm i -g json-server`
+  - É opcional porque a dependência já vem cadastrada no arquivo `package.json` para instalação local na pasta `node_modules`
+- Executar a API Fake (JSON Server) via um dos seguintes comandos:
+  - Execução via script registrado no `package.json`: `npm run json:server`
+  - Ou via Execução explícita: `json-server --watch db.json`
+- O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json`.
+  - Por padrão, a aplicação JSON Server executa no endereço `localhost:3000`
+- Abrir um novo terminal pelo VSCode e então executar o projeto Angular
+  - Comando: `ng s -o`
