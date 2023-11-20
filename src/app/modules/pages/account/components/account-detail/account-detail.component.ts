@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CustomMessageService } from '../../../../../shared/services/message.service';
 
 @Component({
   selector: 'app-account-detail',
@@ -9,18 +8,11 @@ import { CustomMessageService } from '../../../../../shared/services/message.ser
 export class AccountDetailComponent implements OnInit {
   id!: string;
 
-  constructor(
-    private route: ActivatedRoute,
-    private readonly messageService: CustomMessageService,
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.id = params['id'];
     });
-
-    if (!this.id || this.id === 'null') {
-      this.messageService.sendError('Erro inesperado!');
-    }
   }
 }
