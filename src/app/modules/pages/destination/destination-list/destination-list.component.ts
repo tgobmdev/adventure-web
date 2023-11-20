@@ -16,10 +16,11 @@ export class DestinationListComponent implements OnInit {
   constructor(
     private readonly messageService: CustomMessageService,
     private readonly destinationService: DestinationService,
-  ) {}
+  ) {
+    this.createTableColumns();
+  }
 
   ngOnInit(): void {
-    this.createTableColumns();
     this.findAllDestinations();
   }
 

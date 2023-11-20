@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from '../../../shared/services/api.service';
 import { Observable } from 'rxjs';
+import { ApiService } from '../../../shared/services/api.service';
 import { RoadmapRequest } from './dto/request/roadmap-request';
+import { RoadmapTravelResponse } from './dto/response/roadmpa-travel-response';
 
 @Injectable({
   providedIn: 'root',
@@ -11,5 +12,9 @@ export class RoadmapService extends ApiService {
 
   createRoadmap(roadmapRequest: RoadmapRequest): Observable<RoadmapRequest> {
     return this.post(this.roadmapUrl, roadmapRequest);
+  }
+
+  getAllRoadmapTravels(): Observable<RoadmapTravelResponse[]> {
+    return this.get(this.roadmapUrl);
   }
 }
