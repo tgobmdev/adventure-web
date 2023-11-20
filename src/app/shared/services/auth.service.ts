@@ -21,6 +21,7 @@ export class AuthService {
   };
 
   getToken(): string | null {
-    return sessionStorage.getItem(this.TOKEN_KEY);
+    const token = sessionStorage.getItem(this.TOKEN_KEY);
+    return token ? token.replace(/"/g, '') : null;
   }
 }
