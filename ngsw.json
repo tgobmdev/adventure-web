@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1700512136387,
+  "timestamp": 1700512873465,
   "index": "/adventure-web/index.html",
   "assetGroups": [
     {
@@ -14,14 +14,14 @@
         "/adventure-web/155.e739ca97d0079f86.js",
         "/adventure-web/195.fce0d90fbbee62f7.js",
         "/adventure-web/584.c6e3dd72dd637d55.js",
-        "/adventure-web/900.ce5c52375edb0f14.js",
+        "/adventure-web/900.f23bea0e4ff04e29.js",
         "/adventure-web/common.830952f8e419e50c.js",
         "/adventure-web/favicon.ico",
         "/adventure-web/index.html",
         "/adventure-web/main.3241f465d39025ba.js",
         "/adventure-web/manifest.webmanifest",
         "/adventure-web/polyfills.e30dd78b0c437c81.js",
-        "/adventure-web/runtime.35c57c8ca2ad9ea6.js",
+        "/adventure-web/runtime.ef902b934f8360e2.js",
         "/adventure-web/styles.8aa44387ca431134.css"
       ],
       "patterns": []
@@ -83,7 +83,7 @@
     "/adventure-web/155.e739ca97d0079f86.js": "11ff69ba54634b6f49afa21a16a997125e99b460",
     "/adventure-web/195.fce0d90fbbee62f7.js": "398ff4070a29f9edc8d5115ddf323a9d8e2fd09b",
     "/adventure-web/584.c6e3dd72dd637d55.js": "af910c01f7e56b9b4feda17d804dbeb00a0554b4",
-    "/adventure-web/900.ce5c52375edb0f14.js": "872de3a06f78f7026fb9e76d6418ea691c625763",
+    "/adventure-web/900.f23bea0e4ff04e29.js": "e5578945bb283870436368fb7f97c25ddd8d0c89",
     "/adventure-web/Inter-italic.var.958a0b9742fb3ae8.woff2": "6f20a046917bf86d4b6cc29c4e2515bd64d2cb9b",
     "/adventure-web/Inter-roman.var.b2129c009ce46d43.woff2": "7a2602d2ebb08ce895e33addb6fe595f1029431e",
     "/adventure-web/assets/css/materialize.min.css": "0ac9c0295f224a1a056055aa1b52bd17a3fd3c22",
@@ -122,7 +122,7 @@
     "/adventure-web/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/adventure-web/great-vibes-regular.17d753ff51c66946.ttf": "8f4ea5db6bb52147da5773d4dc2ea051dec4c94c",
     "/adventure-web/hue.8b1818380241e6ac.png": "f81ae627637a684614aa726e206c73ce099a01fd",
-    "/adventure-web/index.html": "85c97b57bc6c55450467ee8955a9c8d47f730156",
+    "/adventure-web/index.html": "8783e7e2a548679f4aefd7d3e8bb6a2352e91317",
     "/adventure-web/main.3241f465d39025ba.js": "85fdfa9a02db38f2696c825663df69f7f820faa7",
     "/adventure-web/manifest.webmanifest": "795bea0a865e5da866cc84f4e6bb78d92432f2a3",
     "/adventure-web/polyfills.e30dd78b0c437c81.js": "2bbe9e9b642361f3bbdcc3a093d17abd14e34421",
@@ -130,7 +130,7 @@
     "/adventure-web/primeicons.943ab24c43224d29.svg": "d3332a45242b8f6edbf3f3c7176a280e7edcd961",
     "/adventure-web/primeicons.ba3f916dfb64be8c.woff2": "55a4b2a5f02e362405d8d874903af0b5f6a6c15d",
     "/adventure-web/primeicons.f8b9e8a4e401b603.woff": "b1648b50be13350fde8b5d9a6fe78354ddcc43e4",
-    "/adventure-web/runtime.35c57c8ca2ad9ea6.js": "4dc369e76a4e89d07eccadac371e7380f6523e42",
+    "/adventure-web/runtime.ef902b934f8360e2.js": "1bd6933af8b32bc10c23a472f40bc2db741a7ea0",
     "/adventure-web/styles.8aa44387ca431134.css": "d3f6ea7fe7a193231ad2c9f0430874af0b9065bd"
   },
   "navigationUrls": [
