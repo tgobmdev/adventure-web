@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RoadmapComponent } from './roadmap.component';
+import { RoadmapCreateComponent } from './roadmap-create/roadmap-create.component';
 
-const ROADMAP_HOME = { path: '', component: RoadmapComponent };
+const ROADMAP_CREATE = { path: '', component: RoadmapCreateComponent };
 
-const routes: Routes = [ROADMAP_HOME];
+const routes: Routes = [ROADMAP_CREATE];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
